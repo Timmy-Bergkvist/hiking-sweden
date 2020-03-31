@@ -1,8 +1,9 @@
-# hiking-sweden
-A site where you can find good hiking spots. Milestone Project 2. 
+# Hiking Sweden
+Hiking Sweden is a site for the best hiking spots in sweden, all the way from north to south.
+You can search for the best spot and find it on the map.
 ## UX
 
-This hiking site is intended for 
+This hiking site is intended for hikers who want to hike the best spots in sweden.
 
 The hiking site contains a total of three sections:
 
@@ -78,14 +79,16 @@ Text
 ## Credits
   
    **media**
-  - The photos and text used in this site were obtained from:
-    - <a href="#" target="_blank"> Text </a>
+  - The photos used in this site were obtained from:
+    - <a href="https://pixabay.com/" target="_blank"> Pixabay </a>
+    - <a href="https://pixabay.com/sv/photos/sverige-sj%C3%B6-vatten-reflektioner-2584123/" target="_blank"> Pixabay </a>
+    - <a href="https://pixabay.com/sv/photos/sverige-lappland-kungsleden-1093281/" target="_blank"> Steen Jepsen </a>
     
 
    **Acknowledgements**
   - I received inspiration for this project from:
     - https://www.webdesign-inspiration.com/
-    - Text
+    - https://pixabay.com/
     - Text
     - https://github.com/Code-Institute-Solutions/readme-template
     - Text
