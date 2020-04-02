@@ -1,0 +1,101 @@
+
+@import url('https://fonts.googleapis.com/css?family=Oswald|Ramabhadra&display=swap');
+
+/*-------------------------Background picture---------------------------*/
+
+html, body {
+    background-image: url(../images/background-picture.jpg);
+    background-size: cover;
+    position: relative;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    min-height: 100%;
+}
+
+#main {
+    overflow: auto;
+    padding-bottom: 100px;
+}
+
+/*----------------------------Header--------------------------------*/
+
+.sweden-logo {
+    background: url("../images/sweden-green-logo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: rotate(8.83deg);
+    margin-top: 10px;
+}
+
+header {
+    margin: 0;
+}
+/*
+.heading {
+    margin-left: 5px;
+}
+*/
+.headline {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 100;
+    font-size: 60px;
+    margin-top: 50px;
+    color: rgb(3, 64, 2);
+}
+
+.underline {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-weight: 200;
+    font-size: 27px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    color: rgb(3, 64, 2);
+}
+
+/*----------------------------Section--------------------------------*/
+
+
+
+
+
+/*-----------------------------Footer---------------------------------*/
+
+#footer {
+    background: rgba(3, 64, 2, 0.47);
+    position: relative;
+    height: fit-content;
+    clear: both;
+    text-align: center;
+    padding-top: 20px;   
+}
+
+.general-sub {
+    font-family: 'Oswald', sans-serif;
+    color: #F5F4EF;
+}
+
+.sub-text {
+    font-family: 'Oswald', sans-serif;
+    color: #F5F4EF;
+}
+
+.social-links  li a i {
+    color: #F5F4EF;
+    font-size: 40px;
+    text-align: center;
+}
+
+.social-links li a i:hover{
+    color: rgb(77, 77, 77);
+}

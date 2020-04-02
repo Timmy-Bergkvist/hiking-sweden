@@ -81,7 +81,6 @@ Text
    **media**
   - The photos used in this site were obtained from:
     - <a href="https://pixabay.com/" target="_blank"> Pixabay </a>
-    - <a href="https://pixabay.com/sv/photos/sverige-sj%C3%B6-vatten-reflektioner-2584123/" target="_blank"> Pixabay </a>
     - <a href="https://pixabay.com/sv/photos/sverige-lappland-kungsleden-1093281/" target="_blank"> Steen Jepsen </a>
     
 
