@@ -92,9 +92,11 @@ header {
 .interactive-links {
     text-align: center;
     font-family: 'Oswald', sans-serif;
+    padding-top: 5px; 
+    margin-right: 10px;
 }
 
-.interactive-links  ,li ,a ,i {
+.interactive-links span, a{
     color: rgb(3, 64, 2);
 }
 
