@@ -4,7 +4,7 @@
 /*-------------------------Background picture---------------------------*/
 
 html, body {
-    background-image: url(../images/background-picture.jpg);
+    background: linear-gradient( rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.24)),  url(../images/background-picture.jpg) no-repeat;
     background-size: cover;
     position: relative;
     background-position: center;
@@ -55,7 +55,7 @@ header {
 
 .underline {
     font-family: 'Oswald', sans-serif;
-    text-align: center;
+    /*text-align: center;*/
     font-weight: 200;
     font-size: 27px;
     margin-top: 15px;
@@ -63,9 +63,55 @@ header {
     color: rgb(3, 64, 2);
 }
 
+/*-------braking point for tablet and iphone------*/
+/*
+@media only screen and (max-width: 600px) {
+    .headline {
+        margin-left: 50px;
+        font-size: 30px;
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .underline {
+        margin-left: 50px;
+        font-size: 15px;
+    }
+    
+}
+
 /*----------------------------Section--------------------------------*/
+.section-frame {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.interactive-links {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.interactive-links  ,li ,a ,i {
+    color: rgb(3, 64, 2);
+}
 
 
+.information-container {
+    background: rgba(3, 64, 2, 0.47);
+    border-radius: 25px;
+    padding: 20px; 
+    height: 150px;
+}
+
+.map-container {
+    background: rgba(223, 223, 223, 0.47);
+    border-radius: 25px;
+    padding: 20px; 
+    height: 150px;
+}
 
 
 
