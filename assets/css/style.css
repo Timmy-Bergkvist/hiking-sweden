@@ -109,12 +109,14 @@ header {
 }
 
 .map-container {
-    background: rgba(223, 223, 223, 0.47);
     border-radius: 25px;
     padding: 20px; 
     height: 150px;
 }
 
+#map {
+    min-height: 340px;
+}
 
 
 /*-----------------------------Footer---------------------------------*/
