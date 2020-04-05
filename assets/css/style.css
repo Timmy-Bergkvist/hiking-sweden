@@ -33,12 +33,12 @@ html, body {
 
 /*----------------------------Header--------------------------------*/
 
-.sweden-logo {
-    /*background: url("../images/sweden-green-logo.png");*/
+img {
+    float: left;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    /*transform: rotate(8.83deg);*/
+    transform: rotate(8.83deg);
     margin-top: 10px;
     width: 70px;
 }
@@ -46,26 +46,30 @@ html, body {
 header {
     margin: 0;
 }
-/*
-.heading {
-    margin-left: 5px;
-}
-*/
-.headline {
+
+#headline {
     display: inline;
     font-family: 'Oswald', sans-serif;
     font-weight: 100;
-    font-size: 55px;
+    font-size: 3rem;
     /*margin-top: 50px;*/
     color: rgb(3, 64, 2);
+    margin-left: 20px;
 }
 
-.underline {
-    display: inline;
-    font-family: 'Oswald', sans-serif;
-    /*text-align: center;*/
+#headline span {
+    margin-left: 20px;
+    display: block;
     font-weight: 200;
-    font-size: 20px;
+    font-size: 1.2rem;
+}
+
+#underline {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200;
+    font-size: 1rem;
+    margin-left: 25px;
     /*margin-top: 15px;*/
     /*margin-bottom: 20px;*/
     color: rgb(3, 64, 2);
