@@ -33,7 +33,7 @@ html, body {
 
 /*----------------------------Header--------------------------------*/
 
-img {
+#sweden-logo {
     float: left;
     background-position: center;
     background-repeat: no-repeat;
@@ -57,21 +57,13 @@ header {
     margin-left: 20px;
 }
 
-#headline span {
-    margin-left: 20px;
-    display: block;
-    font-weight: 200;
-    font-size: 1.2rem;
-}
-
 #underline {
+    
     display: block;
+    margin-left: 30px;
     font-family: 'Oswald', sans-serif;
     font-weight: 200;
-    font-size: 1rem;
-    margin-left: 25px;
-    /*margin-top: 15px;*/
-    /*margin-bottom: 20px;*/
+    font-size: 1.2rem;
     color: rgb(3, 64, 2);
 }
 
@@ -116,8 +108,9 @@ header {
 .information-container {
     background: rgba(3, 64, 2, 0.47);
     border-radius: 25px;
-    padding: 20px; 
-    min-height: 340px;
+    padding: 10px; 
+    min-height: 350px;
+    margin-bottom: 20px;
 }
 
 .map-container {
@@ -127,10 +120,89 @@ header {
 }
 
 #map {
-    min-height: 340px;
+    min-height: 350px;
 }
 
+/*-----------------------------search---------------------------------*/
+/*-----------------------------notes---------------------------------*/
+/*-----------------------------contact---------------------------------*/
 
+.contact-wrapper * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Oswald', sans-serif;
+}
+/*
+#contact-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 25px;
+    border-radius: 5px;
+
+}*/
+
+.contact-wrapper h2 {
+    text-align: center;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    color: #F5F4EF;
+}
+
+.contact-wrapper p {
+    text-align: center;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    color: #F5F4EF;
+}
+
+.contact-wrapper .input-field {
+    margin-bottom: 5px;
+    
+}
+
+#form {
+    text-align: center;
+}
+
+.contact-wrapper .input-field input[type="text"],
+.contact-wrapper textarea {
+    width: 80%;
+    border-radius: 8px;
+    border: 1px solid #F5F4EF;
+    padding: 5px;
+}
+
+.contact-wrapper textarea {
+    height: 90px;
+    resize: none;
+}
+
+.contact-wrapper .btn input[type="submit"] {
+    border: 0;
+    border-radius: 8px;
+    padding:8px;
+    width: 100px;
+    background-color: #F5F4EF;
+    cursor: pointer;
+}
+.contact-wrapper .btn input[type="submit"]:hover{
+    background: rgb(197, 196, 189);
+    transition:  0.5s ease-in;
+}
+
+.contact-wrapper #error-message {
+    margin-bottom: 20px;
+    padding: 0px;
+    background: rgb(211, 81, 58);
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+}
 /*-----------------------------Footer---------------------------------*/
 
 #footer {
