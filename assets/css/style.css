@@ -93,17 +93,35 @@ header {
     margin-right: 40px;
 }
 
+/*-----------------------section-frame-links--------------------------*/
 .interactive-links {
     text-align: center;
     font-family: 'Oswald', sans-serif;
-    padding-top: 5px; 
-    margin-right: 10px;
+    padding-bottom: 5px;
 }
 
-.interactive-links span, a{
+.interactive-links p{
+    font-size: 1.2rem;
+}
+
+#p-padding-one {
+    padding-inline-end: 20px;
+    padding-left: 10px;
+}
+
+#p-padding-two {
+    padding-inline-end: 20px;
+}
+
+.interactive-links p, i{
     color: rgb(3, 64, 2);
+    display: inline;
 }
 
+.interactive-links span {
+    font-family: 'Oswald', sans-serif;
+}
+/*--------------------------------------------------------------------*/
 
 .information-container {
     background: rgba(3, 64, 2, 0.47);
@@ -211,6 +229,9 @@ header {
 
 .sub-text {
     font-family: 'Oswald', sans-serif;
+    color: #F5F4EF;
+}
+#sub-text-font{
     color: #F5F4EF;
 }
 

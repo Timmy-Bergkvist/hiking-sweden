@@ -30,36 +30,40 @@
 
     <div id="container">
         <div id="main">
-            <div class="section-frame">
-                <div class="row no-gutters">
-                    <div class="interactive-links">
-                        <span>
-                            <a target="_blank" href="#"><i class="fas fa-search"></i> Search</a>
-                        </span>
-                        <span>
-                            <a target="_blank" href="#"><i class="fas fa-pencil-alt"></i> Notes</a>
-                        </span>
-                        <span>
-                            <a target="_blank" href="#"><i class="far fa-envelope"></i> Contact</a>
-                        </span>
-                    </div>
+            <div class="section-frame">  
+                <!--When you click on one of these three links,-->
+                <!--a function runs the link that has been clicked and-->
+                <!--will be displayed in the information-container-->
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 interactive-links row-nogutters">
+                    <p id="p-padding-one">
+                        <a target="_blank" href="#"><i class="fas fa-search"><span> Search</span></i></a>
+                    </p>
+                    <p id="p-padding-two">
+                        <a target="_blank" href="#"><i class="fas fa-pencil-alt"><span> Notes</span></i></a>
+                    </p>
+                    <p>
+                        <a target="_blank" href="#"><i class="fas fa-envelope"><span> Contact</span></i></a>
+                    </p>
                 </div>
                 <div class="row justify-content-around">
                     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 information-container">
+                        <!--This section will show you the search menu-->
                         <div class="search-wrapper">
 
 
                         </div>
+                        <!--This section will show you the notes form-->
                         <div id="notes">
 
                         </div>
+                        <!--This section will show you the contact form-->
                         <div class="contact_wrapper">
                             <h2>Contact Us</h2>
                             <p>If you have any questions or would like to add a hiking spot, please contact us</p>
 
                             <div id="error_message"></div>
 
-                            <form id="form" onsubmit="return validation(this);">
+                            <form id="form" onsubmit="return validation();">
                                 <div class="input_field">
                                     <input type="text" placeholder="Name" id="name">
                                 </div>
@@ -75,6 +79,7 @@
                             </form>
                         </div>
                     </div>
+                    <!--This section will show you the map section-->
                     <div id="map" class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 map-container">
 
                     </div>
@@ -91,10 +96,10 @@
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                     <h5 class="general-sub">Contact</h5>
                     <p class="sub-text">
-                        <i class="fas fa-mobile-alt"></i> Phone: 0870210990-0
+                        <i id="sub-text-font" class="fas fa-mobile-alt"></i> Phone: 0870210990-0
                     </p>
                     <p class="sub-text">
-                        <i class="fas fa-envelope-open-text"></i> Email: hikingsweden001@gmail.com
+                        <i id="sub-text-font" class="fas fa-envelope-open-text"></i> Email: hikingsweden001@gmail.com
                     </p>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
