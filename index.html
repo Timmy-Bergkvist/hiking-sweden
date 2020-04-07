@@ -35,26 +35,29 @@
                 <!--a function runs the link that has been clicked and-->
                 <!--will be displayed in the information-container-->
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 interactive-links row-nogutters">
-                    <p id="p-padding-one">
+                    <p id="p-padding-one" onclick="return searchFunction()">
                         <a target="_blank" href="#"><i class="fas fa-search"><span> Search</span></i></a>
                     </p>
-                    <p id="p-padding-two">
+                    <p id="p-padding-two" onclick="return notesFunction()">
                         <a target="_blank" href="#"><i class="fas fa-pencil-alt"><span> Notes</span></i></a>
                     </p>
-                    <p>
+                    <p onclick="return contactFunction()">
                         <a target="_blank" href="#"><i class="fas fa-envelope"><span> Contact</span></i></a>
                     </p>
                 </div>
                 <div class="row justify-content-around">
                     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 information-container">
                         <!--This section will show you the search menu-->
-                        <div class="search-wrapper">
-
-
+                        <div class="search_wrapper">
+                            <p>
+                                Search box
+                            </p>
                         </div>
                         <!--This section will show you the notes form-->
-                        <div id="notes">
-
+                        <div class="notes_wrapper">
+                            <p>
+                                Notes box
+                            </p>
                         </div>
                         <!--This section will show you the contact form-->
                         <div class="contact_wrapper">

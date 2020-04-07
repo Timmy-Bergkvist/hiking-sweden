@@ -1,7 +1,6 @@
 /*I obtained information for this contact from here*/
 /*https://www.youtube.com/watch?v=WY4rvU4ImgE */
 
-
 function validation(){
     
    var name = document.getElementById("name").value;
@@ -30,4 +29,13 @@ function validation(){
    }
    alert("Thanks for your message!");
    return true;
+}
+
+function contactFunction() {
+  var x = document.getElementsByClassName("contact_wrapper");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
 }

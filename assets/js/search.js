@@ -1,5 +1,5 @@
-function notesFunction() {
-    var x = document.getElementsByClassName("notes_wrapper");
+function searchFunction() {
+    var x = document.getElementsByClassName("search_wrapper");
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
