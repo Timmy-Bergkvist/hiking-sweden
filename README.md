@@ -5,17 +5,26 @@ You can search for the best spot and find it on the map.
 
 This hiking site is intended for hikers who want to hike the best spots in sweden.
 
-The hiking site contains a total of three sections:
+The index site section contains three clickable options and a map:
 
-- Home
-  - text
-  
-- Contact
-  - text
+- Search
+  - When clicking the search text a search box will be visible for the user. In this box can the user make 
+    different search options which will appear on the map and will be viewed as pins in the results box. 
+    In mobile view the result box will not be visible.
   
 - Notes
-  - text
+  - When clicking the notes text a notepad will be visible for the user. The user can take notes from the
+    locations they want to visit. There is an option to add notes and delit notes.
+  
+- Contact
+  - When clicking the contact a contact-us form will be visible for the user. The user can send a
+    request or ask for questions that they will have answered.
 
+- Map
+  - The map is visible all the time. When the user is searching for a location in the search area it will be
+    visible on the map. When the user click on a result pinn, some information about the hiking spot is visible
+    for the user to read. If the hiking spot has a web page and then clickt the user will open that information in
+    a new window.
 
 
 **Mockups**
@@ -41,9 +50,9 @@ The hiking site contains a total of three sections:
 - Text
 **Features Left to Implement**
 
-- Text
-- Text
-- Text
+- Host the platform on a server.
+- Set up an email so user can send request for new hiking spots.
+- Implement more features and design.
 
 ## Technologies Used
 - <a href="https://en.wikipedia.org/wiki/HTML" target="_blank"> Html </a>
