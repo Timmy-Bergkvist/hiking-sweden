@@ -36,13 +36,13 @@
                 <!--will be displayed in the information-container-->
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 interactive-links row-nogutters">
                     <p id="p-padding-one" onclick="return searchFunction()">
-                        <a target="_blank" href="#"><i class="fas fa-search"><span> Search</span></i></a>
+                        <a href="#"><i class="fas fa-search"><span> Search</span></i></a>
                     </p>
                     <p id="p-padding-two" onclick="return notesFunction()">
-                        <a target="_blank" href="#"><i class="fas fa-pencil-alt"><span> Notes</span></i></a>
+                        <a href="#"><i class="fas fa-pencil-alt"><span> Notes</span></i></a>
                     </p>
                     <p onclick="return contactFunction()">
-                        <a target="_blank" href="#"><i class="fas fa-envelope"><span> Contact</span></i></a>
+                        <a href="#"><i class="fas fa-envelope"><span> Contact</span></i></a>
                     </p>
                 </div>
                 <div class="row justify-content-around">
@@ -54,9 +54,15 @@
                         <!--This section will show you the notes form-->
                         <div class="notes_wrapper">
                             <h2>Write down your notes</h2>
-                            <button class="btn" type="button" onclick="getNewNote();">New note </button>
-                            <div class="note_form">
-                                <p>text</p>
+                            <div id="note_form">
+                                <input type="text" id="noteTitle">
+                                <textarea id="noteBody"></textarea>
+                                <button id="btnSave">save note</button>
+                            </div>
+                            <div id="read_form">
+                                <selects id="noteMaster"></select>
+                                <button id="btnWrite">write note</button>
+                                <div id="noteDisplay"></div>
                             </div>
                         </div>
                         <!--This section will show you the contact form-->
@@ -131,6 +137,8 @@
     <!--<script src="/maps/documentation/javascript/examples/markerclusterer/markerclustererplus@4.0.1.min.js"></script>--->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDV_4v7EGiKy6Hjba3aLnkxuGgNIOMlr7w&callback=initMap"></script>
     <script src="assets/js/maps.js"></script>
+    <script src="assets/js/note.js"></script>
+    <script src="assets/js/notes.js"></script>
     <script src="assets/js/contact.js"></script>
     <script src="https://kit.fontawesome.com/4fdc8c1c9c.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"> </script>

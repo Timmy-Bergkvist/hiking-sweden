@@ -149,39 +149,75 @@ header {
     padding: 0;
     box-sizing: border-box;
     outline: none;
-    font-family: 'Oswald', sans-serif;
 }
 
 .notes_wrapper h2 {
     font-size: 1.2rem;
     text-align: left;
+    margin-left: 10px;
     margin-bottom: 5px;
     letter-spacing: 1px;
     color: #F5F4EF;
+    font-family: 'Oswald', sans-serif;
 }
 
-.btn {
-    font-size: 0.9rem;
-    border: none;
-    background-color: transparent;
-    color: #F5F4EF;
-    cursor: pointer;
+#noteTitle {
+    width: 100%;
+    border-radius: 8px;
+    padding: 3px;
+    background-color: #F5F4EF;
 }
-
-.btn:hover {
-    background: rgb(197, 196, 189);
-    
-}
-
-.note_form {
+#note_form {
     border-radius: 8px;
     padding: 10px; 
     max-height: 300px;
     min-height: auto;
-    margin-bottom: 20px;
+}
+
+#noteBody {
+    width: 100%;
+    height: 80px;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #F5F4EF;
+    resize: none;
+}
+
+#btnSave {
+    border: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    background: #F5F4EF;
+}
+
+#read_form {
+    border-radius: 8px;
+    padding: 10px; 
+    max-height: 300px;
+    min-height: auto;
+}
+
+#noteDisplay {
+    width: 100%;
+    height: 90px;
+    border-radius: 8px;
     background-color: #F5F4EF;
 }
 
+#btnWrite {
+    border: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    background: #F5F4EF;
+}
+
+select {
+    height: 50px;
+}
 
 /*-----------------------------contact---------------------------------*/
 
