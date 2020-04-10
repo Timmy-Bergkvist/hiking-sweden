@@ -48,21 +48,20 @@
                             </p>
                         </div>
                         <!--This section will show you the notes form-->
-                        <div id="div2" class="notes_wrapper targetDiv">
-                            <h2>Write down your notes</h2>
+                        <div  id="div2" class="notes_wrapper targetDiv" style="display:none;">
                             <div id="note_form">
-                                <input type="text" id="noteTitle" placeholder="Note title">
-                                <textarea id="noteBody" placeholder="Note title"></textarea>
+                                <textarea id="noteBody" placeholder="Write down your notes"></textarea>
                                 <button id="btnSave">save note</button>
                             </div>
                             <div id="read_form">
-                                <selects id="noteMaster"></select>
-                                <button id="btnWrite">write note</button>
-                                <div id="noteDisplay"></div>
+                                <div id="noteDisplay">
+                                    note text
+                                    <i class="fas fa-trash-alt"></i>
+                                </div>
                             </div>
                         </div> 
                         <!--This section will show you the contact form-->
-                        <div id="div3" class="contact_wrapper targetDiv">
+                        <div id="div3" class="contact_wrapper targetDiv" style="display:none;">
                             <h2>Contact Us</h2>
                             <p>If you have any questions or would like to add a hiking spot, please contact us</p>
 
@@ -134,13 +133,17 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDV_4v7EGiKy6Hjba3aLnkxuGgNIOMlr7w&callback=initMap"></script>
     <script src="assets/js/maps.js"></script>
     
-    <script src="assets/js/note.js"></script>
-    <script src="assets/js/notes.js"></script>
+
     <script src="assets/js/contact.js"></script>
     <script src="https://kit.fontawesome.com/4fdc8c1c9c.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+    <script src="assets/js/note.js"></script>
+    <script src="assets/js/notes.js"></script>
+
     <script src="assets/js/section-links.js"></script>
 </body>
 

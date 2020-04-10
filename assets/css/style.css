@@ -162,12 +162,6 @@ header {
     font-family: 'Oswald', sans-serif;
 }
 
-#noteTitle {
-    width: 100%;
-    border-radius: 8px;
-    padding: 3px;
-    background-color: #F5F4EF;
-}
 #note_form {
     border-radius: 8px;
     padding: 10px; 
@@ -204,16 +198,15 @@ header {
     width: 100%;
     height: 90px;
     border-radius: 8px;
-    background-color: #F5F4EF;
+    background-color: #DFD2AE;
+    margin-bottom: 5px;
+    padding: 10px;
+    color: rgb(0, 0, 0);
 }
 
-#btnWrite {
-    border: none;
-    color: rgb(0, 0, 0);
+#noteDisplay i {
+    float: right;
     cursor: pointer;
-    border-radius: 3px;
-    font-size: 0.9rem;
-    background: #F5F4EF;
 }
 
 select {
