@@ -162,14 +162,14 @@ header {
     font-family: 'Oswald', sans-serif;
 }
 
-#note_form {
+.inputDiv {
     border-radius: 8px;
     padding: 10px; 
     max-height: 300px;
     min-height: auto;
 }
 
-#noteBody {
+.noteInput {
     width: 100%;
     height: 80px;
     border-radius: 8px;
@@ -178,23 +178,23 @@ header {
     resize: none;
 }
 
-#btnSave {
-    border: none;
+.btnSave {
     color: rgb(0, 0, 0);
     cursor: pointer;
     border-radius: 3px;
     font-size: 0.9rem;
-    background: #F5F4EF;
+    background-color: #F5F4EF;
+    padding:2px;
 }
 
-#read_form {
+.noteContainer {
     border-radius: 8px;
     padding: 10px; 
     max-height: 300px;
     min-height: auto;
 }
 
-#noteDisplay {
+.note_display {
     width: 100%;
     height: 90px;
     border-radius: 8px;
@@ -204,9 +204,19 @@ header {
     color: rgb(0, 0, 0);
 }
 
-#noteDisplay i {
+.note_display textarea{
+    resize: none;
+    background: none;
+    border: none;
+    width: 80%;
+    height: 70px;
+}
+
+.removeBtn{
     float: right;
     cursor: pointer;
+    background: none;
+    border: none;
 }
 
 select {
