@@ -169,7 +169,7 @@ header {
     min-height: auto;
 }
 
-.noteInput {
+.input {
     width: 100%;
     height: 80px;
     border-radius: 8px;
@@ -192,19 +192,21 @@ header {
     padding: 10px; 
     max-height: 300px;
     min-height: auto;
+    /*background-color: #DFD2AE;*/
 }
 
-.note_display {
-    width: 100%;
-    height: 90px;
+.item_input {
+    width: 93%;
+    height: 35px;
     border-radius: 8px;
     background-color: #DFD2AE;
     margin-bottom: 5px;
     padding: 10px;
     color: rgb(0, 0, 0);
+    border: none;
 }
 
-.note_display textarea{
+.item {
     resize: none;
     background: none;
     border: none;
@@ -212,16 +214,13 @@ header {
     height: 70px;
 }
 
-.removeBtn{
+.remove{
     float: right;
     cursor: pointer;
     background: none;
     border: none;
 }
 
-select {
-    height: 50px;
-}
 
 /*-----------------------------contact---------------------------------*/
 
