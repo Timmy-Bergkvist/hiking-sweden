@@ -190,13 +190,21 @@ header {
 .noteContainer {
     border-radius: 8px;
     padding: 10px; 
-    max-height: 300px;
-    min-height: auto;
+    max-height: 200px;
+    min-height: 200px;
     /*background-color: #DFD2AE;*/
 }
 
+.notesbox{
+    overflow-x: hidden; 
+    overflow-y: auto;
+    max-height: 200px;
+    min-height: 200px;
+    resize: none;
+}
+
 .item_input {
-    width: 93%;
+    width: 88%;
     height: 35px;
     border-radius: 8px;
     background-color: #DFD2AE;
@@ -210,12 +218,12 @@ header {
     resize: none;
     background: none;
     border: none;
-    width: 80%;
-    height: 70px;
+    height: 40px;
 }
 
 .remove{
-    float: right;
+    margin-left: 10px;
+    color: #e00;
     cursor: pointer;
     background: none;
     border: none;
