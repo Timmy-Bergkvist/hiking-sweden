@@ -150,29 +150,53 @@ header {
     outline: none;
     font-family: 'Oswald', sans-serif;
 }
+.search_wrapper {
+    padding: 10px; 
+}
 
 .search_wrapper .input_field {
-    width: 80%;
+    width: 100%;
     border-radius: 8px;
-    border: 1px solid #F5F4EF;
     padding: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-color: #F5F4EF;
 }
 
 
+.input_field #explore {
+    background-color: #F5F4EF;
+    width: 100%;
+    border: none;
+}
+
+.input_field #search {
+    background-color: #F5F4EF;
+    width: 100%;
+    border: none;
+}
+
+.lables {
+    text-align: center;
+}
+#south, #north, #whole{
+    color: #F5F4EF;
+    padding-right: 10px;
+}
 
 .locationContainer {
     border-radius: 8px;
     padding: 10px; 
-    max-height: 200px;
-    min-height: 200px;
+    max-height: 180px;
+    min-height: 180px;
 }
 
 .locationsbox {
+    padding: 10px; 
     overflow-x: hidden; 
     overflow-y: auto;
-    max-height: 200px;
-    min-height: 200px;
+    max-height: 180px;
+    min-height: 180px;
     resize: none;
 }
 /*-----------------------------notes---------------------------------*/
@@ -182,16 +206,6 @@ header {
     padding: 0;
     box-sizing: border-box;
     outline: none;
-}
-
-.notes_wrapper h2 {
-    font-size: 1.2rem;
-    text-align: left;
-    margin-left: 10px;
-    margin-bottom: 5px;
-    letter-spacing: 1px;
-    color: #F5F4EF;
-    font-family: 'Oswald', sans-serif;
 }
 
 .inputDiv {
@@ -213,7 +227,7 @@ header {
 .btnSave {
     color: rgb(0, 0, 0);
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 8px;
     font-size: 0.9rem;
     background-color: #F5F4EF;
     padding:2px;
