@@ -5,13 +5,13 @@ const noteContainer = document.querySelector('.noteContainer');
 let inputValue = document.querySelector('.input');
 const btnSave = document.querySelector('.btnSave');
 
-if(window.localStorage.getItem("todos") == undefined){
-     let todos = [];
-     window.localStorage.setItem("todos", JSON.stringify(todos));
+if(window.localStorage.getItem("note") == undefined){
+     let note = [];
+     window.localStorage.setItem("note", JSON.stringify(note));
 }
 
-let todosEX = window.localStorage.getItem("todos");
-let todos = JSON.parse(todosEX);
+let noteEX = window.localStorage.getItem("note");
+let note = JSON.parse(noteEX);
 
 
 class item{
@@ -42,9 +42,9 @@ class item{
 
     remove(itemBox, name){
         itemBox.parentNode.removeChild(itemBox);
-        let index = todos.indexOf(name);
-        todos.splice(index, 1);
-        window.localStorage.setItem("todos", JSON.stringify(todos));
+        let index = note.indexOf(name);
+        note.splice(index, 1);
+        window.localStorage.setItem("note", JSON.stringify(note));
     }
 }
 
@@ -58,14 +58,14 @@ window.addEventListener('keydown', (e) => {
 function check(){
 	if(inputValue.value != ""){
 		new item(inputValue.value);
-        todos.push(inputValue.value);
-        window.localStorage.setItem("todos", JSON.stringify(todos));
+        note.push(inputValue.value);
+        window.localStorage.setItem("note", JSON.stringify(note));
 		inputValue.value = "";
 	}
 }
 
 
-for (let v = 0 ; v < todos.length ; v++){
-    new item(todos[v]);
+for (let v = 0 ; v < note.length ; v++){
+    new item(note[v]);
 }
 

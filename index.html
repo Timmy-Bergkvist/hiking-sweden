@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
@@ -18,9 +19,9 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div>
                     <p>
-                    <img id="sweden-logo" src="assets/images/sweden-green-logo.png">
-                    <h1 id="headline">Hinking Sweden</h1>
-                    <p id="underline">Find Sweden's best hiking areas.</p>
+                        <img id="sweden-logo" src="assets/images/sweden-green-logo.png">
+                        <h1 id="headline">Hinking Sweden</h1>
+                        <p id="underline">Find Sweden's best hiking areas.</p>
                         <!---<h3 id="underline">Find Sweden's best hiking areas.</h3>--->
                     </p>
                 </div>
@@ -30,25 +31,48 @@
 
     <div id="container">
         <div id="main">
-            <div class="section-frame">  
+            <div class="section-frame">
                 <!--When you click on one of these three links,-->
                 <!--a function runs the link that has been clicked and-->
                 <!--will be displayed in the information-container-->
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 interactive-links row-nogutters">
-                    <div class="showSingle" id="search-header" target="1"><a><i class="fas fa-search"><span> Search</span></i></a></div>
-                    <div class="showSingle" id="notes-header" target="2"><a ><i class="fas fa-pencil-alt"><span> Notes</span></i></a></div>
-                    <div class="showSingle" id="contact-header" target="3"><a ><i class="fas fa-envelope"><span> Contact</span></i></a></div>
+                    <div class="showSingle" id="search-header" target="1"><a><i class="fas fa-search"><span>
+                                    Search</span></i></a></div>
+                    <div class="showSingle" id="notes-header" target="2"><a><i class="fas fa-pencil-alt"><span>
+                                    Notes</span></i></a></div>
+                    <div class="showSingle" id="contact-header" target="3"><a><i class="fas fa-envelope"><span>
+                                    Contact</span></i></a></div>
                 </div>
                 <div class="row justify-content-around">
                     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 information-container">
                         <!--This section will show you the search menu-->
                         <div id="div1" class="search_wrapper targetDiv">
-                            <p>
-                                hello
-                            </p>
+                            <form>
+                                <div class="input_field">
+                                    <input type="text" placeholder="Search for a location" id="search">
+                                </div>
+                                <input type="radio" id="whole" value="whole">
+                                <label for="whole">Whole Sweden</label>
+                                <input type="radio" id="north" value="north">
+                                <label for="north">North</label>
+                                <input type="radio" id="South" value="South">
+                                <label for="South">South</label>
+                            </form>
+                            <div class="input_field">
+                                <select placeholder="Explore" id="explore">
+                                    <option value="hiking">Hiking spots</option>
+                                    <option value="walking">Walking trails</option>
+                                    <option value="camps">Camps</option>
+                                </select>
+                            </div>
+                            <div class="locationsbox">
+                                <div class="locationContainer">
+
+                                </div>
+                            </div>
                         </div>
                         <!--This section will show you the notes form-->
-                        <div  id="div2" class="notes_wrapper targetDiv" style="display:none;">
+                        <div id="div2" class="notes_wrapper targetDiv" style="display:none;">
                             <div class="inputDiv">
                                 <textarea class="input" type="text" placeholder="Write down your notes"></textarea>
                                 <div class="note-button">
@@ -56,13 +80,7 @@
                                 </div>
                             </div>
                             <div class="notesbox">
-                                <div class="noteContainer">
-                                    <!------
-                                    <div class="note_display">
-                                        <textarea class="item_input" disabled form="form_id" type="text"></textarea> 
-                                        <button class="removeBtn"><i class="fas fa-trash-alt"></i></button>
-                                    </div>---->
-                                </div>
+                                <div class="noteContainer"></div>
                             </div>
                         </div>
 
@@ -81,12 +99,12 @@
                                     <input type="text" placeholder="Email" id="email">
                                 </div>
                                 <div class="input_field">
-                                    <textarea id="message" placeholder="Message" ></textarea>
+                                    <textarea id="message" placeholder="Message"></textarea>
                                 </div>
                                 <div class="btn">
                                     <input type="submit" value="Send">
                                 </div>
-                            </form>        
+                            </form>
                         </div>
                     </div>
                     <!--This section will show you the map section-->
@@ -136,9 +154,10 @@
         </div>
     </footer>
     <!--<script src="/maps/documentation/javascript/examples/markerclusterer/markerclustererplus@4.0.1.min.js"></script>--->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDV_4v7EGiKy6Hjba3aLnkxuGgNIOMlr7w&callback=initMap"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDV_4v7EGiKy6Hjba3aLnkxuGgNIOMlr7w&callback=initMap"></script>
     <script src="assets/js/maps.js"></script>
-    
+
 
     <script src="assets/js/contact.js"></script>
     <script src="https://kit.fontawesome.com/4fdc8c1c9c.js"></script>
