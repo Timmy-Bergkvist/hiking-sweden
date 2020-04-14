@@ -119,9 +119,10 @@ function initMap() {
 
 
   let locations = [
-    { lat: 60.577939, lng: 17.666003 },
-    { lat: 61.577939, lng: 16.666004 },
-    { lat: 63.577939, lng: 18.666005 }
+    { lat: 66.929681, lng: 20.220471 }, //Nationalpark
+    { lat: 67.283337, lng: 17.700021 }, //Nationalpark
+    { lat: 63.971291, lng: 18.055406 }, //Nationalpark
+    { lat: 63.119522, lng: 18.493946}  //Nationalpark
   ];
   
   let labels = [];
