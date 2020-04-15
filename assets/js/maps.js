@@ -117,7 +117,6 @@ function initMap() {
   });
 
 
-
   let locations = [
     { lat: 66.929681, lng: 20.220471 }, //Nationalpark
     { lat: 67.283337, lng: 17.700021 }, //Nationalpark
@@ -137,3 +136,5 @@ function initMap() {
     { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
 
 }
+
+
