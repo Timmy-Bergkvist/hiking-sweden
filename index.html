@@ -53,7 +53,7 @@
                                 <label for="north" id="north">North</label>
                                 <input type="radio" id="south" value="south">
                                 <label for="south" id="south">South</label>
-                                <button id="reset"><i class="fas fa-undo-alt"></i></button>
+                                <button id="reset" onclick="reset()" type="button"><i class="fas fa-undo-alt"></i></button>
                             </div>
                             <div class="input_field">
                                 <input type="text" placeholder="Search for a location" id="search-input">
@@ -66,8 +66,8 @@
                                     <option value="camps">Cabins</option>
                                 </select>
                             </div>
-                            <div class="locationsbox">
-                                <div class="locationContainer">
+                            <div class="locationContainer">
+                                <div id="results">
 
                                 </div>
                             </div>
@@ -155,7 +155,6 @@
 
     <!---------JavaScrip scripts--------->
     <script src="assets/js/maps.js"></script>
-    <script src="assets/js/search.js"></script>
     <script src="assets/js/notes.js"></script>
     <script src="assets/js/contact.js"></script>
     <!-------------JQuery-Popper-Bootstrap------------>

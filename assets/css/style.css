@@ -205,19 +205,19 @@ header {
 }
 
 .locationContainer {
-    border-radius: 8px;
-    padding: 10px; 
-    max-height: 180px;
-    min-height: 180px;
-}
-
-.locationsbox {
     padding: 10px; 
     overflow-x: hidden; 
     overflow-y: auto;
     max-height: 180px;
     min-height: 180px;
     resize: none;
+}
+
+#results {
+    border-radius: 8px;
+    padding: 10px; 
+    max-height: 180px;
+    min-height: 180px;
 }
 /*-----------------------------notes---------------------------------*/
 
