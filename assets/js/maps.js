@@ -1,4 +1,10 @@
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDV_4v7EGiKy6Hjba3aLnkxuGgNIOMlr7w&libraries=places"
+src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDV_4v7EGiKy6Hjba3aLnkxuGgNIOMlr7w&libraries=places"
+
+let map, places, infoWindow;
+      let autocomplete;
+      let MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
+      let hostnameRegexp = new RegExp('^https?://.+?/');
+
 function initMap() {
   let map = new google.maps.Map(document.getElementById("map"), {
     zoom: 4,
@@ -113,258 +119,59 @@ function initMap() {
         stylers: [{ color: '#92998d' }]
       }
     ],
-  });
-  var card = document.getElementById('pac-card');
-        var input = document.getElementById('pac-input');
-        var types = document.getElementById('type-selector');
-        
-
-        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
-
-        var autocomplete = new google.maps.places.Autocomplete(input);
-
-        // Bind the map's bounds (viewport) property to the autocomplete object,
-        // so that the autocomplete requests use the current map bounds for the
-        // bounds option in the request.
-        autocomplete.bindTo('bounds', map);
-
-        // Set the data fields to return when the user selects a place.
-        autocomplete.setFields(
-            ['address_components', 'geometry', 'icon', 'name']);
-
-        var infowindow = new google.maps.InfoWindow();
-        var infowindowContent = document.getElementById('infowindow-content');
-        infowindow.setContent(infowindowContent);
-        var marker = new google.maps.Marker({
-          map: map,
-          anchorPoint: new google.maps.Point(0, -29)
-        });
-
-        autocomplete.addListener('place_changed', function() {
-          infowindow.close();
-          marker.setVisible(false);
-          var place = autocomplete.getPlace();
-          if (!place.geometry) {
-            // User entered the name of a Place that was not suggested and
-            // pressed the Enter key, or the Place Details request failed.
-            window.alert("No details available for input: '" + place.name + "'");
-            return;
-          }
-
-          // If the place has a geometry, then present it on a map.
-          if (place.geometry.viewport) {
-            map.fitBounds(place.geometry.viewport);
-          } else {
-            map.setCenter(place.geometry.location);
-            map.setZoom(17);  // Why 17? Because it looks good.
-          }
-          marker.setPosition(place.geometry.location);
-          marker.setVisible(true);
-
-          var address = '';
-          if (place.address_components) {
-            address = [
-              (place.address_components[0] && place.address_components[0].short_name || ''),
-              (place.address_components[1] && place.address_components[1].short_name || ''),
-              (place.address_components[2] && place.address_components[2].short_name || '')
-            ].join(' ');
-          }
-
-          infowindowContent.children['place-icon'].src = place.icon;
-          infowindowContent.children['place-name'].textContent = place.name;
-          infowindowContent.children['place-address'].textContent = address;
-          infowindow.open(map, marker);
-        });
-
-        // Sets a listener on a radio button to change the filter type on Places
-        // Autocomplete.
-        function setupClickListener(id, types) {
-          var radioButton = document.getElementById(id);
-          radioButton.addEventListener('click', function() {
-            autocomplete.setTypes(types);
-          });
-        }
-
-        setupClickListener('changetype-all', []);
-        setupClickListener('changetype-address', ['address']);
-        setupClickListener('changetype-establishment', ['establishment']);
-
-
-        
-      
-  /*
-        / When the user enter a location.
-
-function onPlaceChanged() {
-    var place = autocomplete.getPlace();
-    if ($("#accommodation").is(':selected')) {
-        if (place.geometry) {
-            map.panTo(place.geometry.location);
-            map.setZoom(13);
-            var search = {
-                bounds: map.getBounds(),
-                types: ['lodging']
-            };
-            doNearbySearch(search);
-        }
-        else {
-            $('#autocomplete').attr("placeholder", "Enter a county");
-        }
-    }
-    else if ($("#camping").is(':selected')) {
-        if (place.geometry) {
-            map.panTo(place.geometry.location);
-            map.setZoom(13);
-                search = {
-                bounds: map.getBounds(),
-                types: ['campground']
-            };
-            doNearbySearch(search);
-        }
-        else {
-            $('#autocomplete').attr("placeholder", "Enter a town or city");
-        }
-    }
-    else if ($("#attraction").is(':selected')) {
-        if (place.geometry) {
-            map.panTo(place.geometry.location);
-            map.setZoom(13);
-                search = {
-                bounds: map.getBounds(),
-                types: ['art_gallery', 'aquarium', 'amusement_park', 'museum', 'tourist_attraction', 'zoo']
-            };
-            doNearbySearch(search);
-        }
-        else {
-            $('#autocomplete').attr("placeholder", "Enter a town or city");
-        }
-    }
-    else if ($("#park").is(':selected')) {
-        if (place.geometry) {
-            map.panTo(place.geometry.location);
-            map.setZoom(13);
-                search = {
-                bounds: map.getBounds(),
-                types: ['park']
-            };
-            doNearbySearch(search);
-        }
-        else {
-            $('#autocomplete').attr("placeholder", "Enter a town or city");
-        }
-    }
-    else if ($("#stadium").is(':selected')) {
-        if (place.geometry) {
-            map.panTo(place.geometry.location);
-            map.setZoom(13);
-                search = {
-                bounds: map.getBounds(),
-                types: ['stadium']
-            };
-            doNearbySearch(search);
-        }
-        else {
-            $('#autocomplete').attr("placeholder", "Enter a town or city");
-        }
-    }
-    else if ($("#food").is(':selected')) {
-        if (place.geometry) {
-            map.panTo(place.geometry.location);
-            map.setZoom(13);
-                search = {
-                bounds: map.getBounds(),
-                types: ['cafe', 'restaurant', 'bakery']
-            };
-            doNearbySearch(search);
-        }
-        else {
-            $('#autocomplete').attr("placeholder", "Enter a town or city");
-        }
-    }
-}
-
-
-
-
-  let search = document.getElementById('#div1');
-  let input = document.getElementById('#search-input');
-  let types = document.getElementById('#search-wrapper');
-
-  map.controls[google.maps.ControlPosition.getElementById('#div1')].push(search);
-
-  let autocomplete = new google.maps.places.Autocomplete(input);
-
-  // Bind the map's bounds (viewport) property to the autocomplete object,
-  // so that the autocomplete requests use the current map bounds for the
-  // bounds option in the request.
-  autocomplete.bindTo('bounds', map);
-
-  // Set the data fields to return when the user selects a place.
-  autocomplete.setFields(
-    ['nationalparks', 'geometry', 'icon', 'name']);
-
-  let infowindow = new google.maps.InfoWindow();
-  let infowindowContent = document.getElementById('infowindow-content');
-  infowindow.setContent(infowindowContent);
-  let marker = new google.maps.Marker({
-    map: map,
-    anchorPoint: new google.maps.Point(0, -29)
-  });
-
-  autocomplete.addListener('place_changed', function () {
-    infowindow.close();
-    marker.setVisible(false);
-    let place = autocomplete.getPlace();
-    if (!place.geometry) {
-      // User entered the name of a Place that was not suggested and
-      // pressed the Enter key, or the Place Details request failed.
-      window.alert("No details available for input: '" + place.name + "'");
-      return;
-    }
-
-    // If the place has a geometry, then present it on a map.
-    if (place.geometry.viewport) {
-      map.fitBounds(place.geometry.viewport);
-    } else {
-      map.setCenter(place.geometry.location);
-      map.setZoom(17);  // Why 17? Because it looks good.
-    }
-    marker.setPosition(place.geometry.location);
-    marker.setVisible(true);
-
-    let address = '';
-    if (place.nationalparks) {
-      address = [
-        (place.nationalparks[0] && place.nationalparks[0].short_name || ''),
-        (place.nationalparks[1] && place.nationalparks[1].short_name || ''),
-        (place.nationalparks[2] && place.nationalparks[2].short_name || '')
-      ].join(' ');
-    }
-
-    infowindowContent.children['place-icon'].src = place.icon;
-    infowindowContent.children['place-name'].textContent = place.name;
-    infowindowContent.children['place-address'].textContent = address;
-    infowindow.open(map, marker);
-    */
-    /*-----------------------------------------------------*/
-    //a click listner for the radio buttons to change
-    //the lockations whole sweden , north and  south
-    /*
-    function setupClickListener(id, types) {
-      let radioButton = document.getElementById(id);
-      radioButton.addEventListener('click', function () {
-        autocomplete.setTypes(types);
-      });
-    }
-    setupClickListener('whole', []);        //view-all
-    setupClickListener('north', ['north']); //view-north
-    setupClickListener('south', ['south']); //view-south
-    
     
   });
-  */
-  /*-----------------------------------------------------*/
+
   
+  let card = document.getElementById('pac-card');
+  /*let input = document.getElementById('pac-input');*/
+  let types = document.getElementById('type-selector');
+
+  var autocomplete = new google.maps.places.Autocomplete(input);
+
+  autocomplete.bindTo('bounds', map);
+  
+  // Sets a listener on a radio button to change the filter type on Places
+  // Autocomplete.
+  function setupClickListener(id, types) {
+    let radioButton = document.getElementById(id);
+    radioButton.addEventListener('click', function () {
+      autocomplete.setTypes(types);
+    });
+  }
+
+  setupClickListener('changetype-all', []);
+  setupClickListener('changetype-north', ['north']);
+  setupClickListener('changetype-south', ['south']);
+
+
+  autocomplete.setupClickListener('place_changed', onPlaceChanged);
+  document.getElementById('category').addEventListener('change', onPlaceChanged);
+
+  // when a user choose a category 
+
+  let locations = [
+    ["Nationalpark1", 66.929681, 20.220471 ], //Nationalpark
+    ["Nationalpark2", 67.283337, 17.700021 ], //Nationalpark
+    ["Nationalpark3", 63.971291, 18.055406 ], //Nationalpark
+    ["Nationalpark4", 63.119522, 18.493946 ]  //Nationalpark
+  ];
+
+  let = content [
+    ["Nationalpark1"]
+    ["Nationalpark2"]
+    ["Nationalpark3"]
+    ["Nationalpark4"]
+  ];
+
+  function clearResults() {
+    let results = document.getElementById('results');
+    while (results.childNodes[0]) {
+      results.removeChild(results.childNodes[0]);
+    }
+  }
+  /*-----------------------------------------------------*/
+
   let locations = [
     { lat: 66.929681, lng: 20.220471 }, //Nationalpark
     { lat: 67.283337, lng: 17.700021 }, //Nationalpark
@@ -386,13 +193,16 @@ function onPlaceChanged() {
 }
 
 /*--------------a reset click function----------------*/
-/*
+
 function reset() {
-  $('#category')[0].selectedIndex = 0;
-  $("#search-input").val("");
-  $('#locationContainer').html("");
-  place = "";
+    clearResults();
+    clearMarkers();
+    $('#category')[0].selectedIndex = 0;
+    $("#autocomplete").val("");
+    map.setZoom (4);
+    map.setCenter ({ lat: 62.577939, lng: 15.666002 });
+    place = "";
 }
-*/
+
 /*-----------------------------------------------------*/
 

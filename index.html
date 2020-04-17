@@ -59,23 +59,35 @@
                         <!--This section will show you the search menu-->
                         <div id="div1" class="search_wrapper targetDiv">
                             <div class="pac-card" id="pac-card">
-                                <div>
+                                <div id="autocomplete">
                                   <div id="type-selector" class="pac-controls">
                                     <input type="radio" name="type" id="changetype-all" checked="checked">
                                     <label for="changetype-all">Whole Sweden</label>
                           
-                                    <input type="radio" name="type" id="changetype-establishment">
-                                    <label for="changetype-establishment">Establishments</label>
+                                    <input type="radio" name="type" id="changetype-north">
+                                    <label for="changetype-north">North</label>
                           
-                                    <input type="radio" name="type" id="changetype-address">
-                                    <label for="changetype-address">Addresses</label>
-                          
+                                    <input type="radio" name="type" id="changetype-south">
+                                    <label for="changetype-south">South</label>
+                                    <button id="reset" onclick="reset()" type="button"><i class="fas fa-undo-alt"></i></button>
                                   </div>
                                 </div>
+                                <div class="category-container">
+                                    <select id="category">
+                                        <option value="nationalparks" checked="checked">Nationalparks</option>
+                                        <option value="hiking">Hiking trails</option>
+                                        <option value="camps">Camps</option> <!--campground-->
+                                        <option value="cabins">Cabins</option> <!--rv_park-->
+                                        <option value="tourist_attraction">Tourist attraction</option> <!--tourist_attraction-->
+                                        <option value="park">Parks</option> <!--park-->
+                                    </select>
+                                </div>
+                                <!----
                                 <div id="pac-container">
                                   <input id="pac-input" type="text"
                                       placeholder="Enter a County">
                                 </div>
+                                --->
                               </div>
 
                               <div id="infowindow-content">
@@ -84,36 +96,13 @@
                                 <span id="place-address"></span>
                               </div>
                             <!-----
-                            <div id="search-wrapper">
-                                <div class="lables">
-                                    <input type="radio" id="whole" value="whole">
-                                    <label for="whole" id="whole">Whole Sweden</label>
-                                    <input type="radio" id="north" value="north">
-                                    <label for="north" id="north">North</label>
-                                    <input type="radio" id="south" value="south">
-                                    <label for="south" id="south">South</label>
-                                    <button id="reset" onclick="reset()" type="button"><i class="fas fa-undo-alt"></i></button>
-                                </div>
-                                <div class="input_field">
-                                    <input type="text" placeholder="Search for a location" id="search-input">
-                                </div>
-                                <div class="category-container">
-                                    <select placeholder="Explore" id="category">
-                                        <option value="nationalparks">Nationalparks</option>
-                                        <option value="hiking">Hiking trails</option>
-                                        <option value="camps">Camps</option> //campground
-                                        <option value="cabins">Cabins</option> //rv_park
-                                        <option value="tourist_attraction">Tourist attraction</option> //tourist_attraction
-                                        <option value="park">Parks</option> //park
-                                        <option value="camps">Cabins</option>
-                                    </select>
-                                </div>
+            
                                 <div class="locationContainer">
                                     <div id="results">
 
                                     </div>
                                 </div>
-                            </div>---->
+                            ---->
                         </div> 
                         <!--This section will show you the notes form-->
                         <div id="div2" class="notes_wrapper targetDiv" style="display:none;">

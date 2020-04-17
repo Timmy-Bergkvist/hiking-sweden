@@ -143,6 +143,7 @@ header {
 }
 
 /*-----------------------------search---------------------------------*/
+
 .search_wrapper * {
     margin: 0;
     padding: 0;
@@ -154,7 +155,7 @@ header {
     padding: 10px; 
 }
 
-.search_wrapper .input_field {
+.search_wrapper #pac-container {
     width: 100%;
     border-radius: 8px;
     padding: 5px;
@@ -176,22 +177,13 @@ header {
     width: 100%;
     border: none;
 }
-
-.input_field #search-input {
+/* is not being used at the moment
+#pac-container #pac-input {
     background-color: #F5F4EF;
     width: 100%;
     border: none;
 }
-
-.lables {
-    text-align: center;
-}
-#south, #north, #whole{
-    color: #F5F4EF;
-    padding-right: 13px;
-    padding-bottom: 5px;
-    cursor: pointer;
-}
+*/
 #reset {
     background: none;
     border: none;
@@ -203,6 +195,44 @@ header {
     color: #F5F4EF;
     font-size: 1.2rem;
 }
+
+.pac-card {
+    /*margin: 10px 10px 0 0;*/
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    outline: none;
+    font-family: 'Oswald', sans-serif;
+    color: #F5F4EF;
+  }
+
+  #pac-container {
+    padding-bottom: 12px;
+    margin-right: 12px;
+  }
+
+  .pac-controls {
+    /*display: inline-block;*/
+    padding: 5px 11px;
+  }
+
+  .pac-controls label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+  }
+/*
+  #pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 400px;
+  }
+  */
 
 .locationContainer {
     padding: 10px; 
@@ -219,6 +249,20 @@ header {
     max-height: 180px;
     min-height: 180px;
 }
+  
+  /*-------------------google map info box--------------------*/
+  #infowindow-content .title {
+    font-weight: bold;
+  }
+
+  #infowindow-content {
+    display: none;
+  }
+
+  #map #infowindow-content {
+    display: inline;
+  }
+/*------------------------------------------------------------*/
 /*-----------------------------notes---------------------------------*/
 
 .notes_wrapper * {
@@ -403,60 +447,3 @@ header {
     color: rgb(77, 77, 77);
 }
 
-/*---------------------google maps test------------------------*/
-
-#description {
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  #infowindow-content .title {
-    font-weight: bold;
-  }
-
-  #infowindow-content {
-    display: none;
-  }
-
-  #map #infowindow-content {
-    display: inline;
-  }
-
-  .pac-card {
-    margin: 10px 10px 0 0;
-    border-radius: 2px 0 0 2px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    outline: none;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    background-color: #fff;
-    font-family: Roboto;
-  }
-
-  #pac-container {
-    padding-bottom: 12px;
-    margin-right: 12px;
-  }
-
-  .pac-controls {
-    display: inline-block;
-    padding: 5px 11px;
-  }
-
-  .pac-controls label {
-    font-family: Roboto;
-    font-size: 13px;
-    font-weight: 300;
-  }
-
-  #pac-input {
-    background-color: #fff;
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: 300;
-    margin-left: 12px;
-    padding: 0 11px 0 13px;
-    text-overflow: ellipsis;
-    width: 400px;
-  }
