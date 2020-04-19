@@ -124,7 +124,7 @@ function initMap() {
 
   
   let card = document.getElementById('pac-card');
-  /*let input = document.getElementById('pac-input');*/
+  let input = document.getElementById('pac-input');
   let types = document.getElementById('type-selector');
 
   var autocomplete = new google.maps.places.Autocomplete(input);
@@ -144,7 +144,7 @@ function initMap() {
   setupClickListener('changetype-north', ['north']);
   setupClickListener('changetype-south', ['south']);
 
-
+/*
   autocomplete.setupClickListener('place_changed', onPlaceChanged);
   document.getElementById('category').addEventListener('change', onPlaceChanged);
 
