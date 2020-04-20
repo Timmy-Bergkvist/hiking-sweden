@@ -231,20 +231,13 @@ header {
     max-height: 180px;
     min-height: 180px;
 }
-  
-  /*-------------------google map info box--------------------*/
-  #infowindow-content .title {
-    font-weight: bold;
-  }
 
-  #infowindow-content {
-    display: none;
-  }
-
-  #map #infowindow-content {
-    display: inline;
-  }
-/*------------------------------------------------------------*/
+/*google map info box*/
+.gm-style-iw {
+    border: 2px solid rgba(3, 64, 2, 0.47);
+    font-family: 'Oswald', sans-serif;
+    color: rgba(3, 64, 2, 0.897);
+}
 /*-----------------------------notes---------------------------------*/
 
 .notes_wrapper * {
