@@ -177,13 +177,7 @@ header {
     width: 100%;
     border: none;
 }
-/* is not being used at the moment
-#pac-container #pac-input {
-    background-color: #F5F4EF;
-    width: 100%;
-    border: none;
-}
-*/
+
 #reset {
     background: none;
     border: none;
@@ -221,18 +215,6 @@ header {
     font-size: 13px;
     font-weight: 300;
   }
-/*
-  #pac-input {
-    background-color: #fff;
-    font-family: Roboto;
-    font-size: 15px;
-    font-weight: 300;
-    margin-left: 12px;
-    padding: 0 11px 0 13px;
-    text-overflow: ellipsis;
-    width: 400px;
-  }
-  */
 
 .locationContainer {
     padding: 10px; 

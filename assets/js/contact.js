@@ -16,7 +16,7 @@ function validation(contactForm){
      text = "Please enter a valid name";
      error_message.innerHTML = text;
      return false;
-   }
+   } 
 
    //Email needs to contains @ and more than 5 letters
    if(email.indexOf("@") == -1 || email.length < 5){
@@ -42,7 +42,7 @@ function validation(contactForm){
   emailjs.send(service_id, template_id, template_params);
    
   alert("Thank you " + name + " for your message! We will contact you at " + email);
-
+  /*document.getElementById("form").reset();*/
   return true;
    
 }

@@ -60,50 +60,47 @@
                         <div id="div1" class="search_wrapper targetDiv">
                             <div class="pac-card" id="pac-card">
                                 <div id="autocomplete">
-                                  <div id="type-selector" class="pac-controls">
-                                    <input type="radio" name="type" id="changetype-all" checked="checked">
-                                    <label for="changetype-all">Whole Sweden</label>
-                          
-                                    <input type="radio" name="type" id="changetype-north">
-                                    <label for="changetype-north">North</label>
-                          
-                                    <input type="radio" name="type" id="changetype-south">
-                                    <label for="changetype-south">South</label>
-                                    <button id="reset" onclick="reset()" type="button"><i class="fas fa-undo-alt"></i></button>
-                                  </div>
+                                    <div id="type-selector" class="pac-controls">
+                                        <input type="radio" name="type" id="changetype-all" checked="checked">
+                                        <label for="changetype-all">Whole Sweden</label>
+
+                                        <input type="radio" name="type" id="changetype-north">
+                                        <label for="changetype-north">North</label>
+
+                                        <input type="radio" name="type" id="changetype-south">
+                                        <label for="changetype-south">South</label>
+                                        <button id="reset" onclick="reset()" type="button"><i
+                                                class="fas fa-undo-alt"></i></button>
+                                    </div>
                                 </div>
                                 <div class="category-container">
                                     <select id="category">
-                                        <option value="nationalparks" checked="checked">Nationalparks</option>
-                                        <option value="hiking">Hiking trails</option>
-                                        <option value="camps">Camps</option> <!--campground-->
-                                        <option value="cabins">Cabins</option> <!--rv_park-->
-                                        <option value="tourist_attraction">Tourist attraction</option> <!--tourist_attraction-->
-                                        <option value="park">Parks</option> <!--park-->
+                                        <option value="hiking" checked="checked">Hiking trails</option>
+                                        <option value="nationalparks">Nationalparks</option>
+                                        <!-------future implementations----->
+                                        <!--<option value="camps">Camps</option>--->
+                                        <!--campground-->
+                                        <!--<option value="cabins">Cabins</option>-->
+                                        <!--rv_park-->
+                                        <!--<option value="tourist_attraction">Tourist attraction</option>-->
+                                        <!--tourist_attraction-->
+                                        <!--<option value="park">Parks</option>-->
+                                        <!--park-->
                                     </select>
                                 </div>
-                                
-                                <div id="pac-container">
-                                  <input id="pac-input" type="text"
-                                      placeholder="Enter a lokation">
-                                </div>
-                            
-                              </div>
+                            </div>
 
-                              <div id="infowindow-content">
+                            <div id="infowindow-content">
                                 <img src="" width="16" height="16" id="place-icon">
-                                <span id="place-name"  class="title"></span><br>
+                                <span id="place-name" class="title"></span><br>
                                 <span id="place-address"></span>
-                              </div>
-                            <!-----
-            
-                                <div class="locationContainer">
-                                    <div id="results">
+                            </div>
+                            <div class="locationContainer" style="display: none;">
+                                <div id="results">
 
-                                    </div>
                                 </div>
-                            ---->
-                        </div> 
+                            </div>
+                        </div>
                         <!--This section will show you the notes form-->
                         <div id="div2" class="notes_wrapper targetDiv" style="display:none;">
                             <div class="inputDiv">
@@ -197,7 +194,8 @@
     <!---Google maps API--->
     <script
         src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDV_4v7EGiKy6Hjba3aLnkxuGgNIOMlr7w&callback=initMap&libraries=places"
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDV_4v7EGiKy6Hjba3aLnkxuGgNIOMlr7w&callback=initMap&libraries=places"
         async defer></script>
 
     <script src="https://kit.fontawesome.com/4fdc8c1c9c.js"></script>
