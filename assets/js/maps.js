@@ -163,18 +163,46 @@ function initMap() {
       anchorPoint: new google.maps.Point(0, -29)
   });
 
-/*------------location and content for North------------*/
+/*-----------------------location and content-----------------------*/
   let locationsNorth = [
-    ["Muddus National Park", 66.929681, 20.220471 ], //Nationalpark
-    ["Sarek National Park", 67.283337, 17.700021 ], //Nationalpark
-    ["Björnlandets National Park", 63.971291, 18.055406 ], //Nationalpark
-    ["Skuleskogen National Park", 63.119522, 18.493946 ],  //Nationalpark
-    ["Pieljekaise National Park", 66.350583, 16.742662],  //Nationalpark
-    ["Sånfjället National Park", 62.299990, 13.583215 ],  //Nationalpark
-    ["Vadvetjåkka National Park", 68.539931, 18.434607 ]  //Nationalpark
+    /*------------index location for Nationalparks North------------*/
+    ["Muddus National Park", 66.929681, 20.220471 ],
+    ["Sarek National Park", 67.283337, 17.700021 ],
+    ["Björnlandets National Park", 63.971291, 18.055406 ],
+    ["Skuleskogen National Park", 63.119522, 18.493946 ],  
+    ["Pieljekaise National Park", 66.350583, 16.742662],  
+    ["Sånfjället National Park", 62.299990, 13.583215 ],  
+    ["Vadvetjåkka National Park", 68.539931, 18.434607 ],  
+    /*------------index for location Nationalpark South------------*/
+    ["Ängsö National Park", 59.621690, 18.764867 ], 
+    ["Tiveden National Park", 58.717104, 14.606406 ], 
+    ["Garphyttan National Park", 59.278629, 14.883532 ], 
+    ["Norra Kvill National Park", 57.762927, 15.593638 ], 
+    ["Tresticklan National Park", 59.044018, 11.795059 ], 
+    ["Åsnens National Park", 56.643113, 14.651639 ],
+    ["Dalby Söderskog National Park", 55.676284, 13.330185 ]
   ];
-  
+
+  let hiking = [
+    /*------------index for location Hiking trails North------------*/
+    [" Hiking trails", ], 
+    [" Hiking trails", ], 
+    [" Hiking trails", ], 
+    [" Hiking trails", ], 
+    [" Hiking trails", ], 
+    [" Hiking trails", ],
+    [" Hiking trails", ],
+    /*------------index for location Hiking trails North------------*/
+    [" Hiking trails", ], 
+    [" Hiking trails", ], 
+    [" Hiking trails", ], 
+    [" Hiking trails", ], 
+    [" Hiking trails", ], 
+    [" Hiking trails", ],
+    [" Hiking trails", ]];
+
   let content = [
+    /*------------index content for Nationalparks North------------*/
     ["Muddus National Park", "<div>" +
     "<h3>Muddus National Park</h3>" +
     "<p>Muddus / Muttos National Park is the vast marshes and deep ancient forests.</p>" +
@@ -223,34 +251,75 @@ function initMap() {
     "<p>The park is named after the mountain Vadvetjåkka, which dominates the area. Here you go if you want to experience the real solitude, a rich mountain flora and deep cave systems.</p>" +
     "<p>For more information <a href='https://naturkartan.se/sv/nationalparker/vadvetjakka-nationalpark' target='_blank'><span class='sr-only'>Click Here</span>Click Here</a></p>" +
     "<p><img src='./assets/images/vadvetjåkka-nationalpark.jpg' class='rounded mx-auto d-block'></p>" +
-    "</div>"]
+    "</div>"],
+    /*------------index content for Nationalparks South------------*/
+    ["Ängsö National Park","<div>" +
+    "<h3>Ängsö National Park</h3>" +
+    "<p>At the heart of Roslagen lies Ängsö, well known for its floral splendor. Species richness is a result of the interaction between man and nature.</p>" +
+    "<p>The landscape is kept open with mowing and grazing animals.</p>" +
+    "<p>For more information <a href='https://naturkartan.se/sv/nationalparker/angso-nationalpark-2' target='_blank'><span class='sr-only'>Click Here</span>Click Here</a></p>" +
+    "<p><img src='./assets/images/ängsö-nationalpark.jpg' class='rounded mx-auto d-block'></p>" +
+    "</div>"], 
+    ["Tiveden National Park","<div>" +
+    "<h3>Tiveden National Park</h3>" +
+    "<p>Enjoy the wilderness feeling in a hilly and wild forest landscape with dramatic crack valleys, beautiful forest lakes, giant blocks at Stenkälla,</p>" +
+    "<p>views from the Trollkyrkobergen and the beach at Vitsand.</p>" +
+    "<p>For more information <a href='https://naturkartan.se/sv/nationalparker/tiveden-nationalpark' target='_blank'><span class='sr-only'>Click Here</span>Click Here</a></p>" +
+    "<p><img src='./assets/images/tiveden-nationalpark.jpg' class='rounded mx-auto d-block'></p>" +
+    "</div>" ], 
+    ["Garphyttan National Park","<div>" +
+    "<h3>Garphyttan National Park</h3>" +
+    "<p>Garphyttan National Park offers you many opportunities for varied and rich nature experiences.</p>" +
+    "<p>Garphyttan National Park was founded in 1909 and is one of Sweden's oldest national parks.</p>" +
+    "<p>For more information <a href='https://naturkartan.se/sv/nationalparker/garphyttan-nationalpark' target='_blank'><span class='sr-only'>Click Here</span>Click Here</a></p>" +
+    "<p><img src='./assets/images/garphyttan-nationalpark.jpg' class='rounded mx-auto d-block'></p>" +
+    "</div>"  ], 
+    ["Norra Kvill National Park", "<div>" +
+    "<h3>Norra Kvill National Park</h3>" +
+    "<p>In the park opens a magical world of rolling moss mats, boulders in abundance, coarse spruce and pine giants and water lily-covered tarns.</p>" +
+    "<p>As untouched forest in southern Sweden, the central parts of Norra Kvill maintain uniquely high quality with great natural values. The area is also a major attraction.</p>" +
+    "<p>For more information <a href='https://naturkartan.se/sv/nationalparker/norra-kvill-nationalpark' target='_blank'><span class='sr-only'>Click Here</span>Click Here</a></p>" +
+    "<p><img src='./assets/images/norra-kvill-nationalpark.jpg' class='rounded mx-auto d-block'></p>" +
+    "</div>" ], 
+    ["Tresticklan National Park","<div>" +
+    "<h3>Tresticklan National Park</h3>" +
+    "<p>The Tresticklan area is an unusually large forest area for Götaland without buildings and roads.</p>" +
+    "<p>The nature is characterized by narrow and high ridges that extend in a north-south direction.</p>" +
+    "<p>For more information <a href='https://naturkartan.se/sv/nationalparker/tresticklan-nationalpark' target='_blank'><span class='sr-only'>Click Here</span>Click Here</a></p>" +
+    "<p><img src='./assets/images/tresticklan-nationalpark.jpg' class='rounded mx-auto d-block'></p>" +
+    "</div>"  ], 
+    ["Åsnens National Park", "<div>" +
+    "<h3>Åsnens National Park</h3>" +
+    "<p>Åsnen National Park offers a Sweden in miniature. Almost all environments are here; shimmering noble leaves, large coniferous forests, lake shores, marshes and reefs.</p>" +
+    "<p>Unique to the area is the archipelago that unfolds a band of quiet islands where the trees are old and time seems to stand still</p>" +
+    "<p>For more information <a href='https://naturkartan.se/sv/nationalparker/asnens-nationalpark' target='_blank'><span class='sr-only'>Click Here</span>Click Here</a></p>" +
+    "<p><img src='./assets/images/åsnens-nationalpark.jpg' class='rounded mx-auto d-block'></p>" +
+    "</div>" ],
+    ["Dalby Söderskog National Park", "<div>" +
+    "<h3>Dalby Söderskog National Park</h3>" +
+    "<p>Dalby Söderskog is Sweden's smallest national park and is the most beautiful in the spring.</p>" +
+    "<p>A concert of bird song and a carpet of white sips, yellow sips and bunnies will meet you at the end of April / May.</p>" +
+    "<p>For more information <a href='https://naturkartan.se/sv/nationalparker/dalby-soderskog-nationalpark' target='_blank'><span class='sr-only'>Click Here</span>Click Here</a></p>" +
+    "<p><img src='./assets/images/dalby-söderskog-nationalpark.jpg' class='rounded mx-auto d-block'></p>" +
+    "</div>" ],
+    /*------------index content for Hiking trails North------------*/
+    [" Hiking trails", ], 
+    [" Hiking trails", ], 
+    [" Hiking trails", ], 
+    [" Hiking trails", ], 
+    [" Hiking trails", ], 
+    [" Hiking trails", ],
+    [" Hiking trails", ],
+    /*------------index content for Hiking trails North------------*/
+    [" Hiking trails", ], 
+    [" Hiking trails", ], 
+    [" Hiking trails", ], 
+    [" Hiking trails", ], 
+    [" Hiking trails", ], 
+    [" Hiking trails", ],
+    [" Hiking trails", ]
   ];
   /*-----------------------------------------------------*/
-
-  /*------------location and content for South------------*/
-  /*
-  let locationsSouth = [
-    ["Nationalpark5", ], //Nationalpark
-    ["Nationalpark6", ], //Nationalpark
-    ["Nationalpark7", ], //Nationalpark
-    ["Nationalpark8", ]  //Nationalpark
-  ];
-
-  let = contentSouth [
-    ["Nationalpark5"]
-    ["Nationalpark6"]
-    ["Nationalpark7"]
-    ["Nationalpark8"]
-  ];*/
-  /*-----------------------------------------------------*/
-/*
-  let locations = [
-    { lat: 66.929681, lng: 20.220471 }, //Nationalpark
-    { lat: 67.283337, lng: 17.700021 }, //Nationalpark
-    { lat: 63.971291, lng: 18.055406 }, //Nationalpark
-    { lat: 63.119522, lng: 18.493946 }  //Nationalpark
-  ];*/
-
 
   let markers = [];
   var ginfowindow = new google.maps.InfoWindow({
