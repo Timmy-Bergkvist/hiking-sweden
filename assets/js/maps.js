@@ -121,40 +121,12 @@ function initMap() {
   let types = document.getElementById('type-selector');
 
   let all = document.getElementById('changetype-all');
-
   let north = document.getElementById('changetype-north');
-  
   let south = document.getElementById('changetype-south');
 
+  let trail = document.getElementById('#hikingTrail');
+  let parks = document.getElementById('#nationalParks');
   
-  
-
-
-  $(document).ready(function(){
-    $("#changetype-north").click(function(){
-      //on click display all elements in north
-      $("locationsNorth");
-      //on click display content
-      $("markers").on('click',function(){
-        $("contentNorth");
-      });
-    });
-  
-    
-    $("#changetype-south").click(function(){
-      //on click display all elements in south
-      $("locationsSouth");
-      //on click display content
-      $("markers").on('click',function(){
-        $("contentSouth");
-      });
-    });
-
-    $("#reset").click(function(){
-      alert("reset test");
-    });
-  });
-
   var infowindow = new google.maps.InfoWindow();
   var infowindowContent = document.getElementById('infowindow-content');
   infowindow.setContent(infowindowContent);
@@ -163,7 +135,7 @@ function initMap() {
       anchorPoint: new google.maps.Point(0, -29)
   });
 
-/*-----------------------location and content-----------------------*/
+/*-----------------------location, trails and content-----------------*/
   let locations = [
     /*------------index location for Nationalparks North------------*/
     ["Muddus National Park", 66.929681, 20.220471 ],
@@ -302,7 +274,11 @@ function initMap() {
     "<p>A concert of bird song and a carpet of white sips, yellow sips and bunnies will meet you at the end of April / May.</p>" +
     "<p>For more information <a href='https://naturkartan.se/sv/nationalparker/dalby-soderskog-nationalpark' target='_blank'><span class='sr-only'>Click Here</span>Click Here</a></p>" +
     "<p><img src='./assets/images/dalby-söderskog-nationalpark.jpg' class='rounded mx-auto d-block'></p>" +
-    "</div>" ],
+    "</div>" ]
+    
+  ];
+
+  let trailContent = [
     /*------------index content for Hiking trails North------------*/
     ["Bergslagsleden", "<div>" +
     "<h3>Bergslagsleden</h3>" +
@@ -403,13 +379,57 @@ function initMap() {
     "<p>For more information <a href='https://www.svenskaturistforeningen.se/guider-tips/leder/ostkustleden/' target='_blank'><span class='sr-only'>Click Here</span>Click Here</a></p>" +
     "<p><img src='./assets/images/ostkustleden.jpg' class='rounded mx-auto d-block'></p>" +
     "</div>"]
+
   ];
   /*-----------------------------------------------------*/
+    
+
+  $(document).ready(function(){
+    // function for Whole Sweden button
+    $("#changetype-all").click(function(){
+      $("#category").mouseup(function(){
+        let open = $(this).data("isopen");
+        if (open){
+          alert("all")
+        }
+        $(this).data("isopen", !open);
+      });
+    });
+    // function for north button
+    $("#changetype-north").click(function(){
+      alert("test north");
+      $("#category").mouseup(function(){
+        let open = $(this).data("isopen");
+        if (open){
+          alert("in side the north")
+        }
+        $(this).data("isopen", !open);
+      });
+    });
+    // function for south button
+    $("#changetype-south").click(function(){
+      alert("test south")
+      $("#category").mouseup(function(){
+        let open = $(this).data("isopen");
+        if (open){
+          alert("in side the south")
+        }
+        $(this).data("isopen", !open);
+      });
+    });
+    
+    $("#reset").click(function(){
+      alert("reset test");
+    });
+  
+  });
 
   let markers = [];
   var ginfowindow = new google.maps.InfoWindow({
     maxHeight: 300
 });
+/*----------------------displays parks locations--------------------------*/
+/*
   for (var i = 0; i < locations.length; i++) {
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(locations[i][1], locations[i][2]),
@@ -425,6 +445,23 @@ function initMap() {
     })(marker, i));
     markers.push(marker);
 }
+/*----------------------displays trails locations--------------------------*/
+/*
+for (var i = 0; i < hikingLocations.length; i++) {
+  var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(hikingLocations[i][1], hikingLocations[i][2]),
+      map: map,
+      title: hikingLocations[i][0]
+  });
+
+  google.maps.event.addListener(marker, 'click', (function(marker, i) {
+      return function() {
+          ginfowindow.setContent(trailContent[i][1]);
+          ginfowindow.open(map, marker);
+      };
+  })(marker, i));
+  markers.push(marker);
+}*/
 
 
   let markerCluster = new MarkerClusterer(map, markers,
