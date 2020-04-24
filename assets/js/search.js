@@ -1,9 +1,12 @@
 
+
+
+/*
 // function for Whole Sweden radio button
 $("#changetype-all").click(function(){
     $("#category").mouseup(function(){
       let open = $(this).data("isopen");
-      if (open)/*display content from*/ {
+      if (open)display content from {
         alert("all")
       }
       $(this).data("isopen", !open);
@@ -15,8 +18,8 @@ $("#changetype-all").click(function(){
     alert("test north");
     $("#category").mouseup(function(){
       let open = $(this).data("isopen");
-      /*if (open){
-      }*/
+      if (open){
+      }
       $(this).data("isopen", !open);
     });
   });
@@ -28,13 +31,12 @@ $("#changetype-south").click(function(){
       let open = $(this).data("isopen");
       $(this).data("isopen", !open);
     });
-  });
+  });*/
   
-
   // Function to reset radio buttons,
   // maps info and category selector.
-  $("#reset").click(function(){
-    alert("reset test");
-  });
-
-
+  $("#reset").on('click', function() {
+    $('input[name="type"]').prop('checked', false);
+    $("#category").val('select');
+    $("#infowindowContent").val('');
+});
