@@ -428,7 +428,7 @@ header {
 
 #footer {
     background: rgba(3, 64, 2, 0.47);
-    position: relative;
+    /*position: relative;*/
     height: fit-content;
     clear: both;
     text-align: center;
@@ -444,7 +444,7 @@ header {
     font-family: 'Oswald', sans-serif;
     color: #F5F4EF;
 }
-#sub-text-font{
+.sub-text-font{
     color: #F5F4EF;
 }
 

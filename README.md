@@ -33,9 +33,9 @@ The index site section contains three clickable options and a map:
 
 - <a href="/assets/mockups/desktop-home-mockup.jpg" target="_blank">Desktop Home</a> - <a href="/assets/mockups/tablet-home-mockup.jpg" target="_blank">Tablet Home</a> - <a href="/assets/mockups/mobile-home-mockup.jpg" target="_blank">Mobile Home</a>
 
-- <a href="#" target="_blank">Contact Desktop</a> - <a href="#" target="_blank">Contact tablet</a> - <a href="#" target="_blank">Contact Mobile</a>
+- <a href="/assets/mockups/desktop-contact-mockup.jpg" target="_blank">Contact Desktop</a> - <a href="/assets/mockups/tablet-contact-mockup.jpg" target="_blank">Contact tablet</a> - <a href="/assets/mockups/mobile-contact-mockup.jpg" target="_blank">Contact Mobile</a>
 
-- <a href="#" target="_blank">Notes Desktop</a> - <a href="#" target="_blank">Notes Tablet</a> - <a href="#" target="_blank">Notes Mobile</a>
+- <a href="/assets/mockups/desktop-notes-mockup.jpg" target="_blank">Notes Desktop</a> - <a href="/assets/mockups/tablet-notes-mockup.jpg" target="_blank">Notes Tablet</a> - <a href="/assets/mockups/mobile-notes-mockup.jpg" target="_blank">Notes Mobile</a>
 
 
 ## Features
@@ -69,7 +69,8 @@ The index site section contains three clickable options and a map:
 
 Text
 
-  Text 
+  - The responsive is run and tested at:
+    - http://ami.responsivedesign.is/#
 
   - The HTML code is run and tested at:
     - https://validator.w3.org/#validate_by_input
