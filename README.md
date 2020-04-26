@@ -31,7 +31,7 @@ The index site section contains three clickable options and a map:
   
   I have used Figma Mockups to visualize images I can work from.
 
-- <a href="#" target="_blank">Desktop Home</a> - <a href="#" target="_blank">Tablet Home</a> - <a href="#" target="_blank">Mobile Home</a>
+- <a href="/assets/mockups/desktop-home-mockup.jpg" target="_blank">Desktop Home</a> - <a href="/assets/mockups/tablet-home-mockup.jpg" target="_blank">Tablet Home</a> - <a href="/assets/mockups/mobile-home-mockup.jpg" target="_blank">Mobile Home</a>
 
 - <a href="#" target="_blank">Contact Desktop</a> - <a href="#" target="_blank">Contact tablet</a> - <a href="#" target="_blank">Contact Mobile</a>
 
@@ -83,20 +83,23 @@ Text
   
   The hosting platform for this project is GitHub and can be run directly here on github.
   
-  Text
+  https://timmy-bergkvist.github.io/hiking-sweden/
   
 ## Credits
   
    **media**
   - The photos used in this site were obtained from:
     - <a href="https://pixabay.com/" target="_blank"> Pixabay </a>
-    - <a href="https://pixabay.com/sv/photos/sverige-lappland-kungsleden-1093281/" target="_blank"> Steen Jepsen </a>
-    
+    - <a href="https://pixabay.com/sv/photos/sverige-lappland-kungsleden-1093281/" target="_blank"> Steen Jepsen <a>
+    - <a href="https://naturkartan.se/sv"></a>
 
    **Acknowledgements**
   - I received inspiration for this project from:
     - https://www.webdesign-inspiration.com/
     - https://pixabay.com/
     - https://www.youtube.com/watch?v=WY4rvU4ImgE
+    - https://www.youtube.com/watch?v=Gp2bUX7_WIg
     - https://github.com/Code-Institute-Solutions/readme-template
-    - Text
+    - https://naturkartan.se/sv
+    - https://www.svenskaturistforeningen.se/guider-tips/leder/
+    - https://cloud.google.com/maps-platform/

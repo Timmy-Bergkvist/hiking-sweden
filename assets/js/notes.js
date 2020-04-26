@@ -1,5 +1,6 @@
-/*i got information from */
-/* https://www.youtube.com/watch?v=Gp2bUX7_WIg */
+
+/*-----I follwed this tutorial to make this notepad list-----*/
+/*--------https://www.youtube.com/watch?v=Gp2bUX7_WIg-------*/
 
 const noteContainer = document.querySelector('.noteContainer');
 let inputValue = document.querySelector('.input');

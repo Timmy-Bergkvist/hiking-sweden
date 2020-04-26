@@ -1,7 +1,6 @@
-/*I obtained information for this contact from here*/
-/*https://www.youtube.com/watch?v=WY4rvU4ImgE */
 
-
+/*-----I follwed this tutorial to make this contact form-----*/
+/*-------https://www.youtube.com/watch?v=WY4rvU4ImgE---------*/
 
 function validation(contactForm){
   

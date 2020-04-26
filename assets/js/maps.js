@@ -1,4 +1,7 @@
 
+/*-----------------most of the information to make google maps can you get here----------------*/
+/*-----https://developers.google.com/maps/documentation/javascript/examples/place-details-----*/
+
 function initMap() {
   let map = new google.maps.Map(document.getElementById("map"), {
     zoom: 4,
