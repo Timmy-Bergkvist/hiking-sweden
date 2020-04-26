@@ -127,16 +127,13 @@ function initMap() {
   let trail = document.getElementById('#hikingTrail');
   let parks = document.getElementById('#nationalParks');
 
-  var infowindow = new google.maps.InfoWindow();
-  var infowindowContent = document.getElementById('infowindow-content');
+  let infowindow = new google.maps.InfoWindow();
+  let infowindowContent = document.getElementById('infowindow-content');
   infowindow.setContent(infowindowContent);
-  var marker = new google.maps.Marker({
+  let marker = new google.maps.Marker({
     map: map,
     anchorPoint: new google.maps.Point(0, -29)
   });
-
-
-
 
   /*-----------------------location, trails and content-----------------*/
   let locations = [
@@ -386,16 +383,14 @@ function initMap() {
   ];
   /*-----------------------------------------------------*/
 
-
-
   let markers = [];
-  var ginfowindow = new google.maps.InfoWindow({
+  let ginfowindow = new google.maps.InfoWindow({
     maxHeight: 300
   });
   /*----------------------displays parks locations--------------------------*/
 
-  for (var i = 0; i < locations.length; i++) {
-    var marker = new google.maps.Marker({
+  for (let i = 0; i < locations.length; i++) {
+    let marker = new google.maps.Marker({
       position: new google.maps.LatLng(locations[i][1], locations[i][2]),
       map: map,
       title: locations[i][0]
@@ -411,8 +406,8 @@ function initMap() {
   }
   /*----------------------displays trails locations--------------------------*/
   
-  for (var i = 0; i < hikingLocations.length; i++) {
-    var marker = new google.maps.Marker({
+  for (let i = 0; i < hikingLocations.length; i++) {
+    let marker = new google.maps.Marker({
         position: new google.maps.LatLng(hikingLocations[i][1], hikingLocations[i][2]),
         map: map,
         title: hikingLocations[i][0]
@@ -432,7 +427,6 @@ function initMap() {
     { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
 
 }
-
 
 
 /*let labels = [];

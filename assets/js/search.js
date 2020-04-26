@@ -40,3 +40,4 @@ $("#changetype-south").click(function(){
     $("#category").val('select');
     $("#infowindowContent").val('');
 });
+

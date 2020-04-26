@@ -1,6 +1,8 @@
 /*I obtained information for this contact from here*/
 /*https://www.youtube.com/watch?v=WY4rvU4ImgE */
 
+
+
 function validation(contactForm){
   
    let name = document.getElementById("name").value;
@@ -31,14 +33,14 @@ function validation(contactForm){
      return false;
    } 
    
-   var template_params = {
+   let template_params = {
     "from_name": contactForm.name.value,
     "from_email": contactForm.email.value,
     "message_html": contactForm.message.value
   }
   
-  var service_id = "default_service";
-  var template_id = "template_47gjBkEs";
+  let service_id = "default_service";
+  let template_id = "template_47gjBkEs";
   emailjs.send(service_id, template_id, template_params);
    
   alert("Thank you " + name + " for your message! We will contact you at " + email);
@@ -46,3 +48,41 @@ function validation(contactForm){
   return true;
    
 }
+/*
+$(document).ready(function(){
+  $("#errorMessage")
+  let text;
+  $("#form").submit(function(){
+    if ($("#name input[name]").val()=='')
+    {
+      alert("Please enter a valid name");
+      return false;
+    }
+    else if ($("#email input[email]").val()=='')
+    {
+      alert("Please enter a valid email");
+      return false;
+    }
+    else if ($("#message input[message]").val()=='')
+    {
+      alert("Please enter some text");
+      return false;
+    }
+    return true;
+  });
+});
+*/
+
+/*if(form.name.value == ''){
+    text = "Please enter a valid name";
+     error_message.innerHTML = text;
+     return false;
+  } else if (form.email.value.indexOf("@") == -1 || email.length < 5){
+    text = "Please enter a valid email";
+    error_message.innerHTML = text;
+    return false;
+  } else if (form.message.value == ''){
+    text = "Please enter some text";
+    error_message.innerHTML = text;
+    return false;
+  } */

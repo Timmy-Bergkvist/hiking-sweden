@@ -58,31 +58,41 @@ header {
 }
 
 #underline {
-    
     display: block;
-    margin-left: 30px;
+    margin-left: 37px;
     font-family: 'Oswald', sans-serif;
     font-weight: 200;
     font-size: 1.2rem;
     color: rgb(3, 64, 2);
 }
 
-/*-------braking point for tablet and iphone------*/
-/*
-@media only screen and (max-width: 600px) {
-    .headline {
-        margin-left: 50px;
-        font-size: 30px;
-    }
-    
+#headline-container{
+    padding-top: 30px;
+    padding-left: 80px;
 }
 
-@media only screen and (max-width: 600px) {
-    .underline {
-        margin-left: 50px;
-        font-size: 15px;
+/*-------braking point for tablet and iphone------*/
+@media only screen and (max-width: 414px) {
+    /*making it smaller in mobile view*/
+    #headline-container {
+        text-align: center;
+        padding-top: 30px;
     }
-    
+    #headline{
+        font-size: 2.8rem;
+    }
+    #underline {
+        text-align: center;
+        font-size: 1rem;
+    }
+}
+@media only screen and (max-width: 367px){
+    #headline{
+        font-size: 2.2rem;
+    }
+    #underline{
+        margin-left: 18px;
+    }
 }
 
 /*----------------------------Section--------------------------------*/
@@ -128,8 +138,18 @@ header {
     background: rgba(3, 64, 2, 0.47);
     border-radius: 25px;
     padding: 10px; 
-    min-height: 350px;
+    min-height: 420px;
     margin-bottom: 20px;
+}
+@media only screen and (max-width: 414px) {
+    /*making it smaller in mobile view*/
+    .information-container {
+        min-height: 100px;
+    }
+    /*hide the #locationContainer displaing the results in mobile view*/
+    #locationContainer {
+        display: none;
+    }
 }
 
 .map-container {
@@ -139,7 +159,7 @@ header {
 }
 
 #map {
-    min-height: 350px;
+    min-height: 420px;
 }
 
 /*-----------------------------search---------------------------------*/
@@ -248,6 +268,7 @@ header {
 }
 
 .inputDiv {
+    font-family: 'Oswald', sans-serif;
     border-radius: 8px;
     padding: 10px; 
     max-height: 300px;
@@ -262,17 +283,24 @@ header {
     background-color: #F5F4EF;
     resize: none;
 }
-
+.note-button{
+    text-align: center;
+    padding-top: 5px;
+}
 .btnSave {
+    font-family: 'Oswald', sans-serif;
     color: rgb(0, 0, 0);
     cursor: pointer;
     border-radius: 8px;
     font-size: 0.9rem;
     background-color: #F5F4EF;
-    padding:2px;
+    padding:5px;
+    width: 90px;
+    border: none;
 }
 
 .noteContainer {
+    font-family: 'Oswald', sans-serif;
     border-radius: 8px;
     padding: 10px; 
     max-height: 200px;
@@ -281,11 +309,19 @@ header {
 }
 
 .notesbox{
+    font-family: 'Oswald', sans-serif;
     overflow-x: hidden; 
     overflow-y: auto;
     max-height: 200px;
-    min-height: 200px;
+    min-height: 250px;
     resize: none;
+}
+
+@media only screen and (max-width: 414px) {
+    /*making .notesbox smaller in mobile view*/
+    .notesbox {
+        min-height: 160px;;
+    }
 }
 
 .item_input {
@@ -369,8 +405,8 @@ header {
 .contact_wrapper .btn input[type="submit"] {
     border: 0;
     border-radius: 8px;
-    padding:8px;
-    width: 100px;
+    padding:5px;
+    width: 90px;
     background-color: #F5F4EF;
     cursor: pointer;
 }
