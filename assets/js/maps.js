@@ -1,6 +1,6 @@
 
-/*-----------------most of the information to make google maps can you get here----------------*/
-/*-----https://developers.google.com/maps/documentation/javascript/examples/place-details-----*/
+//most of the information to make google maps can you get here
+//https://developers.google.com/maps/documentation/javascript/examples/place-details
 
 function initMap() {
   let map = new google.maps.Map(document.getElementById("map"), {
@@ -118,7 +118,7 @@ function initMap() {
     ],
 
   });
-  
+
   let card = document.getElementById('pac-card');
   let types = document.getElementById('type-selector');
 
@@ -126,7 +126,7 @@ function initMap() {
   let north = document.getElementById('changetype-north');
   let south = document.getElementById('changetype-south');
 
-  let trail = document.getElementById('#hikingTrail');
+  let hiking = document.getElementById('#hikingTrail');
   let parks = document.getElementById('#nationalParks');
 
   let infowindow = new google.maps.InfoWindow();
@@ -137,9 +137,9 @@ function initMap() {
     anchorPoint: new google.maps.Point(0, -29)
   });
 
-  /*-----------------------location, trails and content-----------------*/
+  //location, trails and content
   let locations = [
-    /*------------index location for Nationalparks North------------*/
+    //index location for Nationalparks North
     ["Muddus National Park", 66.929681, 20.220471],
     ["Sarek National Park", 67.283337, 17.700021],
     ["Björnlandets National Park", 63.971291, 18.055406],
@@ -147,7 +147,7 @@ function initMap() {
     ["Pieljekaise National Park", 66.350583, 16.742662],
     ["Sånfjället National Park", 62.299990, 13.583215],
     ["Vadvetjåkka National Park", 68.539931, 18.434607],
-    /*------------index for location Nationalpark South------------*/
+    //index for location Nationalpark South
     ["Ängsö National Park", 59.621690, 18.764867],
     ["Tiveden National Park", 58.717104, 14.606406],
     ["Garphyttan National Park", 59.278629, 14.883532],
@@ -158,7 +158,7 @@ function initMap() {
   ];
 
   let hikingLocations = [
-    /*------------index for location Hiking trails North------------*/
+    //index for location Hiking trails North
     ["Bergslagsleden", 59.895249, 15.286127],
     ["Kebnekaise Around", 67.868110, 18.620005],
     ["Solanderleden", 65.142164, 21.504825],
@@ -166,7 +166,7 @@ function initMap() {
     ["kungsleden Abisko", 68.358473, 18.782304],
     ["Kungsleden Saltoluokta", 67.394106, 18.520452],
     ["Vasaloppsleden", 61.105255, 13.298212],
-    /*------------index for location Hiking trails South------------*/
+    //index for location Hiking trails South
     ["Bohusleden", 57.576861, 12.078465],
     ["Sörmlandsleden", 59.167825, 18.238210],
     ["Blekingeleden", 56.050123, 14.583317],
@@ -177,7 +177,7 @@ function initMap() {
   ];
 
   let content = [
-    /*------------index content for Nationalparks North------------*/
+    //index content for Nationalparks North
     ["Muddus National Park", "<div>" +
       "<h3>Muddus National Park</h3>" +
       "<p>Muddus / Muttos National Park is the vast marshes and deep ancient forests.</p>" +
@@ -227,7 +227,7 @@ function initMap() {
       "<p>For more information <a href='https://naturkartan.se/sv/nationalparker/vadvetjakka-nationalpark' target='_blank'><span class='sr-only'>Click Here</span>Click Here</a></p>" +
       "<p><img src='./assets/images/vadvetjåkka-nationalpark.jpg' class='rounded mx-auto d-block'></p>" +
       "</div>"],
-    /*------------index content for Nationalparks South------------*/
+    //index content for Nationalparks South
     ["Ängsö National Park", "<div>" +
       "<h3>Ängsö National Park</h3>" +
       "<p>At the heart of Roslagen lies Ängsö, well known for its floral splendor. Species richness is a result of the interaction between man and nature.</p>" +
@@ -281,7 +281,7 @@ function initMap() {
   ];
 
   let trailContent = [
-    /*------------index content for Hiking trails North------------*/
+    //index content for Hiking trails North
     ["Bergslagsleden", "<div>" +
       "<h3>Bergslagsleden</h3>" +
       "<p>The trail is divided into 17 stages. The hike are between 280 kilometers long.</p>" +
@@ -331,7 +331,7 @@ function initMap() {
       "<p>For more information <a href='https://www.svenskaturistforeningen.se/guider-tips/leder/vasaloppsleden/' target='_blank'><span class='sr-only'>Click Here</span>Click Here</a></p>" +
       "<p><img src='./assets/images/vasaloppsleden.jpg' class='rounded mx-auto d-block'></p>" +
       "</div>"],
-    /*------------index content for Hiking trails South------------*/
+    //index content for Hiking trails South
     ["Bohusleden", "<div>" +
       "<h3>Bohusleden</h3>" +
       "<p>The trail is divided into 27 stages. The hike are between 37 kilometers long</p>" +
@@ -383,13 +383,14 @@ function initMap() {
       "</div>"]
 
   ];
-  /*-----------------------------------------------------*/
   
+
   let markers = [];
   let ginfowindow = new google.maps.InfoWindow({
     maxHeight: 300
   });
-  /*----------------------displays parks locations--------------------------*/
+
+  //displays parks locations
 
   for (let i = 0; i < locations.length; i++) {
     let marker = new google.maps.Marker({
@@ -406,24 +407,24 @@ function initMap() {
     })(marker, i));
     markers.push(marker);
   }
-  /*----------------------displays trails locations--------------------------*/
-  
+
+  //displays trails locations
+
   for (let i = 0; i < hikingLocations.length; i++) {
     let marker = new google.maps.Marker({
-        position: new google.maps.LatLng(hikingLocations[i][1], hikingLocations[i][2]),
-        map: map,
-        title: hikingLocations[i][0]
+      position: new google.maps.LatLng(hikingLocations[i][1], hikingLocations[i][2]),
+      map: map,
+      title: hikingLocations[i][0]
     });
-  
-    google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-            ginfowindow.setContent(trailContent[i][1]);
-            ginfowindow.open(map, marker);
-        };
+
+    google.maps.event.addListener(marker, 'click', (function (marker, i) {
+      return function () {
+        ginfowindow.setContent(trailContent[i][1]);
+        ginfowindow.open(map, marker);
+      };
     })(marker, i));
     markers.push(marker);
   }
-
 
   let markerCluster = new MarkerClusterer(map, markers,
     { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });

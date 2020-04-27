@@ -1,6 +1,6 @@
 
-/*-----I follwed this tutorial to make this notepad list-----*/
-/*--------https://www.youtube.com/watch?v=Gp2bUX7_WIg-------*/
+//I follwed this tutorial to make this notepad list
+//https://www.youtube.com/watch?v=Gp2bUX7_WIg
 
 const noteContainer = document.querySelector('.noteContainer');
 let inputValue = document.querySelector('.input');
@@ -14,7 +14,7 @@ if(window.localStorage.getItem("note") == undefined){
 let noteEX = window.localStorage.getItem("note");
 let note = JSON.parse(noteEX);
 
-
+//creates a new div item
 class item{
 	constructor(name){
 		this.createItem(name);

@@ -8,13 +8,14 @@ This hiking site is intended for hikers who want to hike the best spots in swede
 The index site section contains three clickable options and a map:
 
 - Search
-  - When clicking the search text a search box will be visible for the user. In this box can the user make 
+  - When clicking the search text a search box will be visible for the user. 
+    This is the first section the use will see. In this box can the user make 
     different search options which will appear on the map and will be viewed as pins in the results box. 
     In mobile view the result box will not be visible.
   
 - Notes
   - When clicking the notes text a notepad will be visible for the user. The user can take notes from the
-    locations they want to visit. There is an option to add notes and delit notes.
+    locations they want to visit. There is an option to save and delit notes.
   
 - Contact
   - When clicking the contact a contact-us form will be visible for the user. The user can send a
@@ -42,17 +43,22 @@ The index site section contains three clickable options and a map:
 
 **Existing Features**
 
-- Text
-- Text
-- Text
-- Text
-- Text
-- Text
+- Interactive links: Allows the user to choose between search, notes and contact links.
+- Search: Allows the user to search for different alternatives to display on the map.
+- Selection buttons: Allows the user to select different locations to be displayed. All, north or south.
+- Select options: Allows the user to select different option to be displayd. Hiking trails and National parks.
+- Reset button: Allows the user to reset all selections.
+- Notes: Allows the user to write and save notes.
+- Contact form: Allows the user to fill aout a form with name, email and description.
+- Map: Allows the user to interact with the map an lock for different locations.
+- Social media button: Allows the user to direct link to social networks.
+
 **Features Left to Implement**
 
 - Host the platform on a server.
 - Set up an email so user can send request for new hiking spots.
 - Implement more features and design.
+- Implement more select options.
 
 ## Technologies Used
 - <a href="https://en.wikipedia.org/wiki/HTML" target="_blank"> Html </a>
@@ -66,8 +72,6 @@ The index site section contains three clickable options and a map:
 - <a href="https://www.figma.com/" target="_blank"> Figma </a>
   
 ## Testing 
-
-Text
 
   - The responsive is run and tested at:
     - http://ami.responsivedesign.is/#

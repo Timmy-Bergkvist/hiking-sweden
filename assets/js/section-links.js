@@ -1,5 +1,5 @@
 
-/* when you click on one of the links that link will be displayed in the section frame */
+//when you click on one of the links that link will be displayed in the section frame
 
 $(document).ready(function () {
   // Hide displayed paragraphs
