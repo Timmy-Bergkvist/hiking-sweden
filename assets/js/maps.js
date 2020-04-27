@@ -118,7 +118,6 @@ function initMap() {
     ],
 
   });
-
   
   let card = document.getElementById('pac-card');
   let types = document.getElementById('type-selector');
@@ -385,7 +384,7 @@ function initMap() {
 
   ];
   /*-----------------------------------------------------*/
-
+  
   let markers = [];
   let ginfowindow = new google.maps.InfoWindow({
     maxHeight: 300
@@ -428,16 +427,4 @@ function initMap() {
 
   let markerCluster = new MarkerClusterer(map, markers,
     { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
-
 }
-
-
-/*let labels = [];
-
-  let markers = locations.map(function (location, i) {
-    return new google.maps.Marker({
-      position: location,
-      label: labels[i % labels.length]
-    });
-  }); */
-

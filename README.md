@@ -92,7 +92,7 @@ Text
   - The photos used in this site were obtained from:
     - <a href="https://pixabay.com/" target="_blank"> Pixabay </a>
     - <a href="https://pixabay.com/sv/photos/sverige-lappland-kungsleden-1093281/" target="_blank"> Steen Jepsen <a>
-    - <a href="https://naturkartan.se/sv"></a>
+    - <a href="https://naturkartan.se/sv" target="_blank"> Natur kartan</a>
 
    **Acknowledgements**
   - I received inspiration for this project from:

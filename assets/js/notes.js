@@ -28,7 +28,8 @@ class item{
     	input.disabled = true;
     	input.value = name;
     	input.classList.add('item_input');
-      
+	  
+		//a trash bin remove button
     	let remove = document.createElement('button');
     	remove.classList.add('remove');
     	remove.innerHTML = "<i class='fas fa-trash-alt'></i>";
@@ -48,7 +49,7 @@ class item{
         window.localStorage.setItem("note", JSON.stringify(note));
     }
 }
-
+// save button
 btnSave.addEventListener('click', check);
 window.addEventListener('keydown', (e) => {
 	if(e.which == 13){
