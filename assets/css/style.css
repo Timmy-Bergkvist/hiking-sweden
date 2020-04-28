@@ -163,6 +163,11 @@ header {
 }
 
 /*-----------------------------search---------------------------------*/
+/*
+.infoZ{
+    z-index: +1;
+}
+*/
 
 .search_wrapper * {
     margin: 0;
@@ -184,7 +189,7 @@ header {
     background-color: #F5F4EF;
 }
 
-.category-container{
+.controls-container{
     width: 100%;
     border-radius: 8px;
     padding: 5px;
@@ -192,7 +197,7 @@ header {
     margin-top: 10px;
     background-color: #F5F4EF;
 }
-.category-container #category {
+.controls-container #controls {
     background-color: #F5F4EF;
     width: 100%;
     border: none;

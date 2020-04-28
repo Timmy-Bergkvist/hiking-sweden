@@ -60,8 +60,9 @@
                         <!--This section will show you the search menu-->
                         <div id="div1" class="search_wrapper">
                             <div class="pac-card" id="pac-card">
-                                <div id="autocomplete">
+                                <div>
                                     <div id="type-selector" class="pac-controls">
+                                        <!-----
                                         <input value="all" type="radio" name="type" id="changetype-all" checked="checked">
                                         <label for="changetype-all">Whole Sweden</label>
 
@@ -69,25 +70,70 @@
                                         <label for="changetype-north">North</label>
 
                                         <input type="radio" name="type" id="changetype-south">
-                                        <label for="changetype-south">South</label>
+                                        <label for="changetype-south">South</label>---->
+                                        
+                                          <div id="locationField">
+                                            <input id="autocomplete" placeholder="Enter a city" type="text"/>
+                                          </div>
                                         <button id="reset" type="button"><i class="fas fa-undo-alt"></i></button>
                                     </div>
                                 </div>
-                                <div class="category-container">
+                                <div class="controls-container" id="controls">
                                     <select id="category">
                                         <option value="select">Select</option>
+                                        <!----
                                         <option id="hikingTrail" value="hiking">Hiking trails</option>
                                         <option id="nationalParks" value="nationalParks">National parks</option>
+                                        ---->
+                                        <option id="accommodation" value="accommodation">Hotels</option>
+                                        <option id="camping" value="accommodation">Campground</option>
+                                        <option id="attraction" value="attraction">Tourist Attraction</option>
+                                        <option id="park" value="attraction">Parks</option>
+                                        <option id="camping" value="accommodation">camping</option>
+                                        
                                     </select>
                                 </div>
                             </div>
-                            <div id="locationContainer">
+
+                            <!-----resultat kommer att visas här byt ut namn sen-->
+                            <div class="infoZ" id="locationContainer">
                                 <div id="infowindowContent">
-                                    <div id="results">
+                                    <div id="listing">
                                         <h5>Results</h5>
+                                        <table id="resultsTable">
+                                        <tbody id="results"></tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
+                            
+                            <!-----content in google maps-->
+                            <div class="infoZ" style="display: none">
+                                <div id="info-content">
+                                  <table>
+                                    <tr id="iw-url-row" class="iw_table_row">
+                                      <td id="iw-icon" class="iw_table_icon"></td>
+                                      <td id="iw-url"></td>
+                                    </tr>
+                                    <tr id="iw-address-row" class="iw_table_row">
+                                      <td class="iw_attribute_name">Address:</td>
+                                      <td id="iw-address"></td>
+                                    </tr>
+                                    <tr id="iw-phone-row" class="iw_table_row">
+                                      <td class="iw_attribute_name">Telephone:</td>
+                                      <td id="iw-phone"></td>
+                                    </tr>
+                                    <tr id="iw-rating-row" class="iw_table_row">
+                                      <td class="iw_attribute_name">Rating:</td>
+                                      <td id="iw-rating"></td>
+                                    </tr>
+                                    <tr id="iw-website-row" class="iw_table_row">
+                                      <td class="iw_attribute_name">Website:</td>
+                                      <td id="iw-website"></td>
+                                    </tr>
+                                  </table>
+                                </div>
+                              </div>
                         </div>
                         <!--This section will show you the notes form-->
                         <div id="div2" class="notes_wrapper" style="display:none;">
@@ -169,7 +215,7 @@
     </footer>
 
     <!---------JavaScrip scripts--------->
-    <script src="assets/js/maps.js"></script>
+    
     <script src="assets/js/notes.js"></script>
     <script src="assets/js/contact.js"></script>
     <!-------------JQuery-Popper-Bootstrap------------>
@@ -177,14 +223,16 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="assets/js/section-links.js"></script>
-    <script src="assets/js/search.js"></script>
+    
+    
     <!---Google maps API--->
+    <script src="assets/js/maps.js"></script>
     <script
         src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDV_4v7EGiKy6Hjba3aLnkxuGgNIOMlr7w&callback=initMap&libraries=places"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCze_jon7Ztcumh8MTGW-ef_MkRIh_Yc-M&libraries=geometry,places&callback=initMap"
         async defer></script>
-
+        <script src="assets/js/maps.js"></script>
     <script src="https://kit.fontawesome.com/4fdc8c1c9c.js"></script>
 </body>
 
