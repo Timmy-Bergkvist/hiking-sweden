@@ -141,6 +141,9 @@ header {
     min-height: 420px;
     margin-bottom: 20px;
 }
+#locationContaine{
+    color: #F5F4EF;
+}
 @media only screen and (max-width: 414px) {
     /*making it smaller in mobile view*/
     .information-container {
@@ -163,11 +166,21 @@ header {
 }
 
 /*-----------------------------search---------------------------------*/
-/*
-.infoZ{
-    z-index: +1;
-}
-*/
+
+#rating {
+    font-size: 13px;
+    font-family: Arial Unicode MS;
+  }
+  .iw_table_row {
+    height: 18px;
+  }
+  .iw_attribute_name {
+    font-weight: bold;
+    text-align: right;
+  }
+  .iw_table_icon {
+    text-align: right;
+  }
 
 .search_wrapper * {
     margin: 0;
@@ -188,8 +201,25 @@ header {
     margin-top: 10px;
     background-color: #F5F4EF;
 }
+#locationField{
+    border: none;
+    width: 80%;
+    background-color: #F5F4EF;
+    
+}
+#autocomplete{
+    background-color: #F5F4EF;
+    border: none;
+    width: 100%;
+    
+}
 
-.controls-container{
+#category {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+}
+.category-container{
     width: 100%;
     border-radius: 8px;
     padding: 5px;
@@ -197,7 +227,7 @@ header {
     margin-top: 10px;
     background-color: #F5F4EF;
 }
-.controls-container #controls {
+.category-container #controls {
     background-color: #F5F4EF;
     width: 100%;
     border: none;
@@ -249,12 +279,16 @@ header {
     min-height: 250px;
     resize: none;
 }
-
+#results-heading{
+    color: #F5F4EF;
+}
 #results {
     border-radius: 8px;
     padding: 10px; 
     max-height: 180px;
     min-height: 250px;
+    color: #F5F4EF;
+    padding-left: 5px;
 }
 
 /*google map info box*/

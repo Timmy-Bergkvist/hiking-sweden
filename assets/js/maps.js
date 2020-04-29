@@ -2,14 +2,14 @@
 //most of the information to make google maps can you get here
 //https://developers.google.com/maps/documentation/javascript/examples/place-details
 
-var map, places, infoWindow;
-var markers = [];
-var autocomplete;
-var countryRestrict = { 'country': 'se' };
-var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
-var hostnameRegexp = new RegExp('^https?://.+?/');
+let map, places, infoWindow;
+let markers = [];
+let autocomplete;
+//let countryRestrict = { 'country': 'se' };
+let MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
+let hostnameRegexp = new RegExp('^https?://.+?/');
 
-var countries = {
+let countries = {
   'se': {                     //For centering the map as opposed to searching.
     center: { lat: 62.8, lng: 15.6 },
     zoom: 4
@@ -24,15 +24,17 @@ function reset() {
   $('#results-heading').html("");
   map.setZoom(countries['se'].zoom);
   map.setCenter(countries['se'].center);
+  $('#hr').hide();
   place = "";
 }
 
 function initMap() {
-  let map = new google.maps.Map(document.getElementById("map"), {
+    map = new google.maps.Map(document.getElementById("map"), {
     zoom: countries['se'].zoom,
     center: countries['se'].center,
     mapTypeControl: false,
     panControl: false,
+    streetViewControl: false,
     styles: [  // Stylising of the map, obtain from https://developers.google.com/maps/documentation/javascript/styling
       { elementType: 'geometry', stylers: [{ color: '#ebe3cd' }] },
       { elementType: 'labels.text.fill', stylers: [{ color: '#523735' }] },
@@ -146,15 +148,6 @@ function initMap() {
 
   });
 
-  let card = document.getElementById('pac-card');
-  let types = document.getElementById('type-selector');
-
-  let all = document.getElementById('changetype-all');
-  let north = document.getElementById('changetype-north');
-  let south = document.getElementById('changetype-south');
-
-  let hiking = document.getElementById('#hikingTrail');
-  let parks = document.getElementById('#nationalParks');
   /*
     let infowindow = new google.maps.InfoWindow();
     let infowindowContent = document.getElementById('infowindow-content');
@@ -162,6 +155,7 @@ function initMap() {
     */
   
   //location, trails and content
+  
   let nationalParkLocations = [
     //index location for Nationalparks North
     ["Muddus National Park", 66.929681, 20.220471],
@@ -453,32 +447,107 @@ function initMap() {
   let markerCluster = new MarkerClusterer(map, markers,
     { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
 
-    infoWindow = new google.maps.InfoWindow({
-      content: document.getElementById('infowindow-content')
-    });
-  
-    let marker = new google.maps.Marker({
-      map: map,
-      anchorPoint: new google.maps.Point(0, -29)
-    });
-  
-    // Create the autocomplete object and associate it with the UI input control.
-    // Restrict the search to the default country, and to place type "cities".
-    autocomplete = new google.maps.places.Autocomplete(
-      /** @type {!HTMLInputElement} */
-      (
+infoWindow = new google.maps.InfoWindow({
+  content: document.getElementById('info-content')
+});
+  // Create the autocomplete object and associate it with the UI input control place type "cities".
+
+  autocomplete = new google.maps.places.Autocomplete(
+    /** @type {!HTMLInputElement} */
+    (
         document.getElementById('autocomplete')), {
-      types: ['(cities)'],
-      componentRestrictions: { country: ['se'] }
-    });
-    places = new google.maps.places.PlacesService(map);
-  
-    autocomplete.addListener('place_changed', onPlaceChanged);
-    document.getElementById('category').addEventListener('change', onPlaceChanged);
+    types: ['(cities)'],
+    componentRestrictions: { country: [ 'se'] }
+});
+places = new google.maps.places.PlacesService(map);
+
+
+// Event listeners.
+
+autocomplete.addListener('place_changed', onPlaceChanged);
+document.getElementById('category').addEventListener('change', onPlaceChanged);
+
+$('#hr').hide();
+
 }
 
 function onPlaceChanged() {
   var place = autocomplete.getPlace();
+  if ($("#accommodation").is(':selected')) {
+      if (place.geometry) {
+          map.panTo(place.geometry.location);
+          map.setZoom(13);
+          var search = {
+              bounds: map.getBounds(),
+              types: ['lodging']
+          };
+          doNearbySearch(search);
+      }
+      else {
+          $('#autocomplete').attr("placeholder", "Enter a town or city");
+      }
+  }
+  else if ($("#camping").is(':selected')) {
+      if (place.geometry) {
+          map.panTo(place.geometry.location);
+          map.setZoom(13);
+              search = {
+              bounds: map.getBounds(),
+              types: ['campground']
+          };
+          doNearbySearch(search);
+      }
+      else {
+          $('#autocomplete').attr("placeholder", "Enter a town or city");
+      }
+  }
+  else if ($("#attraction").is(':selected')) {
+      if (place.geometry) {
+          map.panTo(place.geometry.location);
+          map.setZoom(13);
+              search = {
+              bounds: map.getBounds(),
+              types: ['tourist_attraction']
+          };
+          doNearbySearch(search);
+      }
+      else {
+          $('#autocomplete').attr("placeholder", "Enter a town or city");
+      }
+  }
+  else if ($("#park").is(':selected')) {
+      if (place.geometry) {
+          map.panTo(place.geometry.location);
+          map.setZoom(13);
+              search = {
+              bounds: map.getBounds(),
+              types: ['park']
+          };
+          doNearbySearch(search);
+      }
+      else {
+          $('#autocomplete').attr("placeholder", "Enter a town or city");
+      }
+  }
+  else if ($("#travel_agency").is(':selected')) {
+      if (place.geometry) {
+          map.panTo(place.geometry.location);
+          map.setZoom(13);
+              search = {
+              bounds: map.getBounds(),
+              types: ['travel_agency']
+          };
+          doNearbySearch(search);
+      }
+      else {
+          $('#autocomplete').attr("placeholder", "Enter a town or city");
+      }
+  }
+}
+
+/*
+function onPlaceChanged() {
+  let place = autocomplete.getPlace();
   if (place.geometry) {
     map.panTo(place.geometry.location);
     map.setZoom(15);
@@ -490,12 +559,50 @@ function onPlaceChanged() {
     document.getElementById('autocomplete').placeholder = 'Enter a city';
   }
 }
+*/
+
+function doNearbySearch(search) {
+
+  places.nearbySearch(search, function (results, status) {
+
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+          clearResults();
+          clearMarkers();
+          document.getElementById('results-heading').innerHTML = "Results";
+          $('#hr').show();
 
 
+          // Create a marker for each place found, and asign a letter to it.
+
+          for (var i = 0; i < results.length; i++) {
+              var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
+              var markerIcon = MARKER_PATH + markerLetter + '.png';
+
+
+              // Use marker animation to drop the icons incrementally on the map.
+
+              markers[i] = new google.maps.Marker({
+                  position: results[i].geometry.location,
+                  animation: google.maps.Animation.DROP,
+                  icon: markerIcon
+              });
+
+              // If the user clicks a marker, show the details of that place in an info window.
+
+              markers[i].placeResult = results[i];
+              google.maps.event.addListener(markers[i], 'click', showInfoWindow);
+              setTimeout(dropMarker(i), i * 100);
+              addResult(results[i], i);
+          }
+      }
+  });
+}
+
+/*
 function search() {
-  var search = {
+  let search = {
     bounds: map.getBounds(),
-    types: ['lodging', 'accommodation', 'park', 'tourist_attraction', 'campground']
+    types: ['park', 'accommodation', 'park', 'tourist_attraction', 'campground']
   };
 
   places.nearbySearch(search, function (results, status) {
@@ -504,10 +611,13 @@ function search() {
       clearMarkers();
       // Create a marker for each place found
       // assign a letter of the alphabetic to each marker icon.
-      for (var i = 0; i < results.length; i++) {
-        var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
-        var markerIcon = MARKER_PATH + markerLetter + '.png';
+
+      for (let i = 0; i < results.length; i++) {
+        let markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
+        let markerIcon = MARKER_PATH + markerLetter + '.png';
+
         // Use marker animation to drop the icons incrementally on the map.
+        
         markers[i] = new google.maps.Marker({
           position: results[i].geometry.location,
           animation: google.maps.Animation.DROP,
@@ -522,10 +632,10 @@ function search() {
       }
     }
   });
-}
+}*/
 
 function clearMarkers() {
-  for (var i = 0; i < markers.length; i++) {
+  for (let i = 0; i < markers.length; i++) {
     if (markers[i]) {
       markers[i].setMap(null);
     }
@@ -542,27 +652,27 @@ function dropMarker(i) {
 // Adds the results table into the results section div.
 
 function addResult(result, i) {
-  var results = document.getElementById('results');
-  var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
-  var markerIcon = MARKER_PATH + markerLetter + '.png';
+  let results = document.getElementById('results');
+  let markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
+  let markerIcon = MARKER_PATH + markerLetter + '.png';
 
 
   // Make background transparent in results table
 
-  var tr = document.createElement('tr');
+  let tr = document.createElement('tr');
   tr.style.background = ('transparent');
   tr.onclick = function () {
     google.maps.event.trigger(markers[i], 'click');
 
   };
 
-  var iconTd = document.createElement('td');
-  var nameTd = document.createElement('td');
-  var icon = document.createElement('img');
+  let iconTd = document.createElement('td');
+  let nameTd = document.createElement('td');
+  let icon = document.createElement('img');
   icon.src = markerIcon;
   icon.setAttribute('class', 'placeIcon');
   icon.setAttribute('className', 'placeIcon');
-  var name = document.createTextNode(result.name);
+  let name = document.createTextNode(result.name);
   iconTd.appendChild(icon);
   nameTd.appendChild(name);
   tr.appendChild(iconTd);
@@ -571,7 +681,7 @@ function addResult(result, i) {
 }
 
 function clearResults() {
-  var results = document.getElementById('results');
+  let results = document.getElementById('results');
   while (results.childNodes[0]) {
     results.removeChild(results.childNodes[0]);
   }
@@ -580,7 +690,7 @@ function clearResults() {
 // Get the place details for each search result. Show the information in an info window, anchored on the marker for the place that the user selected.
 
 function showInfoWindow() {
-  var marker = this;
+  let marker = this;
   places.getDetails({ placeId: marker.placeResult.place_id },
     function (place, status) {
       if (status !== google.maps.places.PlacesServiceStatus.OK) {
@@ -610,8 +720,8 @@ function buildIWContent(place) {
 
   // Assign a five-star rating, using a black star ('&#10029;')
   if (place.rating) {
-    var ratingHtml = '';
-    for (var i = 0; i < 5; i++) {
+    let ratingHtml = '';
+    for (let i = 0; i < 5; i++) {
       if (place.rating < (i + 0.5)) {
         ratingHtml += '&#10025;';
       } else {
@@ -627,8 +737,8 @@ function buildIWContent(place) {
   // The regexp isolates the first part of the URL (domain plus subdomain)
   // to give a short URL for displaying in the info window.
   if (place.website) {
-    var fullUrl = place.website;
-    var website = hostnameRegexp.exec(place.website);
+    let fullUrl = place.website;
+    let website = hostnameRegexp.exec(place.website);
     if (website === null) {
       website = 'http://' + place.website + '/';
       fullUrl = website;
@@ -639,4 +749,3 @@ function buildIWContent(place) {
     document.getElementById('iw-website-row').style.display = 'none';
   }
 }
-
