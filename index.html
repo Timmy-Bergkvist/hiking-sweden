@@ -44,9 +44,7 @@
     <div id="container">
         <div id="main">
             <div class="section-frame">
-                <!--When you click on one of these three links,-->
-                <!--a function runs the link that has been clicked and-->
-                <!--will be displayed in the information-container-->
+                <!----------Search--Notes--Contact--links--------->
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 interactive-links row-nogutters">
                     <div id="search-header"><a><i class="fas fa-search"><span>
                                     Search</span></i></a></div>
@@ -57,18 +55,16 @@
                 </div>
                 <div class="row justify-content-around">
                     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 information-container">
-                        <!--This section will show you the search menu-->
+                        <!------------Search menu--------------->
                         <div id="div1" class="search_wrapper">
                             <div class="pac-card" id="pac-card">
-                                <div>
-                                    <div id="type-selector" class="pac-controls">
-                                        <div id="locationField">
-                                            <input id="autocomplete" placeholder="Enter a city" type="text" />
-                                        </div>
-                                        <button id="reset" type="button" onclick="reset()"><i
-                                                class="fas fa-undo-alt"></i></button>
+                                <div id="type-selector" class="pac-controls">
+                                    <div id="locationField">
+                                        <input id="autocomplete" placeholder="Enter a city" type="text" />
                                     </div>
                                 </div>
+                                <button id="reset" type="button" onclick="reset()"><i
+                                        class="fas fa-undo-alt"></i></button>
                                 <div class="category-container" id="controls">
                                     <select id="category">
                                         <option value="" selected>Select</option>
@@ -81,21 +77,37 @@
                                 </div>
                             </div>
 
-                            <!-----resultat kommer att visas här byt ut namn sen-->
+                            <!----------Result box---------->
                             <div id="locationContainer">
-                                <hr class="hr2" id="hr">
-                                <div>
-                                    <h3 id="results-heading" class="header"></h3>
-                                    <div id="listing">
-                                        <table id="resultsTable">
-                                            <tbody id="results"></tbody>
-                                        </table>
+                                <div id="slideshow-container">
+                                    <h6 id="slideshow-text">welcome to hiking sweden, here we have selected
+                                        our best hiking trails and national parks.</h6>
+                                    <div class="mySlides1">
+                                        <img src="assets/images/dalby-söderskog-nationalpark.jpg" style="width:100%">
                                     </div>
+
+                                    <div class="mySlides1">
+                                        <img src="assets/images/muddus-nationalpark.jpg" style="width:100%">
+                                    </div>
+
+                                    <div class="mySlides1">
+                                        <img src="assets/images/åsnens-nationalpark.jpg" style="width:100%">
+                                    </div>
+
+                                    <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                                    <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+                                </div>
+
+                                <h3 id="results-heading" class="header"></h3>
+                                <div id="listing">
+                                    <table id="resultsTable">
+                                        <tbody id="results"></tbody>
+                                    </table>
                                 </div>
                             </div>
 
-                            <!-----content in google maps-->
-                            <div class="infoZ" style="display: none">
+                            <!-------Content that will be displayed in google maps---------->
+                            <div style="display: none">
                                 <div id="info-content">
                                     <table>
                                         <tr id="iw-url-row" class="iw_table_row">
@@ -122,7 +134,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!--This section will show you the notes form-->
+                        <!---------------Notes form--------------->
                         <div id="div2" class="notes_wrapper" style="display:none;">
                             <div class="inputDiv">
                                 <textarea class="input" placeholder="Write down your notes"></textarea>
@@ -134,7 +146,7 @@
                                 <div class="noteContainer"></div>
                             </div>
                         </div>
-                        <!--This section will show you the contact form-->
+                        <!--------------Contact form-------------->
                         <div id="div3" class="contact_wrapper" style="display:none;">
                             <h2>Contact Us</h2>
                             <p>If you have any questions or would like to add a hiking spot, please contact us</p>
@@ -157,7 +169,7 @@
                             </form>
                         </div>
                     </div>
-                    <!--This section will show you the map section-->
+                    <!----------Map----------->
                     <div id="map" class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 map-container">
                     </div>
                 </div>
@@ -189,12 +201,10 @@
                     <h5 class="general-sub">Social Media</h5>
                     <ul class="list-inline social-links">
                         <li class="list-inline-item"><a target="_blank" href="https://sv-se.facebook.com/swedense/"><i
-                                    class="fab fa-facebook-square"></i>
-                            </a></li>
+                                    class="fab fa-facebook-square"></i></a></li>
                         <li class="list-inline-item"><a target="_blank"
                                 href="https://www.instagram.com/explore/tags/hikingsweden/"><i
-                                    class="fab fa-instagram-square"></i>
-                            </a></li>
+                                    class="fab fa-instagram-square"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -202,15 +212,14 @@
     </footer>
 
     <!---------JavaScrip scripts--------->
-
     <script src="assets/js/notes.js"></script>
     <script src="assets/js/contact.js"></script>
+
     <!-------------JQuery-Popper-Bootstrap------------>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="assets/js/section-links.js"></script>
-
+    <script src="assets/js/main.js"></script>
 
     <!---Google maps API--->
     <script src="assets/js/maps.js"></script>
@@ -220,6 +229,7 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCze_jon7Ztcumh8MTGW-ef_MkRIh_Yc-M&libraries=geometry,places&callback=initMap"
         async defer></script>
 
+    <!-------Fontawesome------->
     <script src="https://kit.fontawesome.com/4fdc8c1c9c.js"></script>
 </body>
 

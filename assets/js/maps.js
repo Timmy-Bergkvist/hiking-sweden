@@ -24,7 +24,7 @@ function reset() {
   $('#results-heading').html("");
   map.setZoom(countries['se'].zoom);
   map.setCenter(countries['se'].center);
-  $('#hr').hide();
+  $('#slideshow-container').show();
   place = "";
 }
 
@@ -148,12 +148,6 @@ function initMap() {
 
   });
 
-  /*
-    let infowindow = new google.maps.InfoWindow();
-    let infowindowContent = document.getElementById('infowindow-content');
-    infowindow.setContent(infowindowContent);
-    */
-  
   //location, trails and content
   
   let nationalParkLocations = [
@@ -467,7 +461,7 @@ places = new google.maps.places.PlacesService(map);
 autocomplete.addListener('place_changed', onPlaceChanged);
 document.getElementById('category').addEventListener('change', onPlaceChanged);
 
-$('#hr').hide();
+$('#slideshow-container').show();
 
 }
 
@@ -545,22 +539,6 @@ function onPlaceChanged() {
   }
 }
 
-/*
-function onPlaceChanged() {
-  let place = autocomplete.getPlace();
-  if (place.geometry) {
-    map.panTo(place.geometry.location);
-    map.setZoom(15);
-    search = {
-      bounds: map.getBounds(),
-      types: ['lodging', 'accommodation', 'park', 'tourist_attraction', 'campground']
-    };
-  } else {
-    document.getElementById('autocomplete').placeholder = 'Enter a city';
-  }
-}
-*/
-
 function doNearbySearch(search) {
 
   places.nearbySearch(search, function (results, status) {
@@ -569,15 +547,12 @@ function doNearbySearch(search) {
           clearResults();
           clearMarkers();
           document.getElementById('results-heading').innerHTML = "Results";
-          $('#hr').show();
-
-
-          // Create a marker for each place found, and asign a letter to it.
+          $('#slideshow-container').hide();
+          // Create a marker for each place found.
 
           for (var i = 0; i < results.length; i++) {
               var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
               var markerIcon = MARKER_PATH + markerLetter + '.png';
-
 
               // Use marker animation to drop the icons incrementally on the map.
 
@@ -597,42 +572,6 @@ function doNearbySearch(search) {
       }
   });
 }
-
-/*
-function search() {
-  let search = {
-    bounds: map.getBounds(),
-    types: ['park', 'accommodation', 'park', 'tourist_attraction', 'campground']
-  };
-
-  places.nearbySearch(search, function (results, status) {
-    if (status === google.maps.places.PlacesServiceStatus.OK) {
-      clearResults();
-      clearMarkers();
-      // Create a marker for each place found
-      // assign a letter of the alphabetic to each marker icon.
-
-      for (let i = 0; i < results.length; i++) {
-        let markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
-        let markerIcon = MARKER_PATH + markerLetter + '.png';
-
-        // Use marker animation to drop the icons incrementally on the map.
-        
-        markers[i] = new google.maps.Marker({
-          position: results[i].geometry.location,
-          animation: google.maps.Animation.DROP,
-          icon: markerIcon
-        });
-        // If the user clicks a hotel marker, show the details of that place
-        // in an info window.
-        markers[i].placeResult = results[i];
-        google.maps.event.addListener(markers[i], 'click', showInfoWindow);
-        setTimeout(dropMarker(i), i * 100);
-        addResult(results[i], i);
-      }
-    }
-  });
-}*/
 
 function clearMarkers() {
   for (let i = 0; i < markers.length; i++) {

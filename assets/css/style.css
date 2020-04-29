@@ -141,9 +141,6 @@ header {
     min-height: 420px;
     margin-bottom: 20px;
 }
-#locationContaine{
-    color: #F5F4EF;
-}
 @media only screen and (max-width: 414px) {
     /*making it smaller in mobile view*/
     .information-container {
@@ -203,10 +200,11 @@ header {
 }
 #locationField{
     border: none;
-    width: 80%;
+    width: 100%;
     background-color: #F5F4EF;
     
 }
+
 #autocomplete{
     background-color: #F5F4EF;
     border: none;
@@ -261,8 +259,11 @@ header {
   }
 
   .pac-controls {
-    /*display: inline-block;*/
+    display: inline-block;
     padding: 5px 11px;
+    background-color: #F5F4EF;
+    border-radius: 8px;
+    width: 80%;
   }
 
   .pac-controls label {
@@ -276,11 +277,20 @@ header {
     overflow-x: hidden; 
     overflow-y: auto;
     max-height: 180px;
-    min-height: 250px;
+    min-height: 300px;
     resize: none;
 }
-#results-heading{
+
+#slideshow-text{
+    font-family: 'Oswald', sans-serif;
     color: #F5F4EF;
+    text-align: center;
+    padding-bottom: 5px;
+}
+#results-heading{
+    font-family: 'Oswald', sans-serif;
+    color: #F5F4EF;
+    padding-bottom: 10px;
 }
 #results {
     border-radius: 8px;
@@ -288,7 +298,11 @@ header {
     max-height: 180px;
     min-height: 250px;
     color: #F5F4EF;
-    padding-left: 5px;
+}
+
+/* result icon*/
+.placeIcon{
+    padding-right: 5px;
 }
 
 /*google map info box*/
@@ -497,3 +511,48 @@ header {
     color: rgb(77, 77, 77);
 }
 
+
+/*-----------*/
+
+* {box-sizing: border-box}
+.mySlides1 {display: none}
+img {
+    vertical-align: middle;
+    border-radius: 8px;
+}
+
+/* Slideshow container */
+#slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+  background-color: #f1f1f1;
+  color: #F5F4EF;
+}
