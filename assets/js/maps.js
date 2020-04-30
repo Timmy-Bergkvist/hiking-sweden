@@ -1,6 +1,8 @@
 
-//most of the information to make google maps can you get here
+//Most of the information to make google maps can you get here:
 //https://developers.google.com/maps/documentation/javascript/examples/place-details
+//Some of the code and help-inspiration was obtain from:
+//https://jsudron.github.io/Nordic-Discovery-Project/index.html
 
 let map, places, infoWindow;
 let markers = [];
@@ -10,7 +12,7 @@ let MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/i
 let hostnameRegexp = new RegExp('^https?://.+?/');
 
 let countries = {
-  'se': {                     //For centering the map as opposed to searching.
+  'se': {                     
     center: { lat: 62.8, lng: 15.6 },
     zoom: 4
   }
@@ -148,10 +150,10 @@ function initMap() {
 
   });
 
-  //location, trails and content
+  //Location, Trails and content.
   
   let nationalParkLocations = [
-    //index location for Nationalparks North
+    //Index for Nationalparks locations North:
     ["Muddus National Park", 66.929681, 20.220471],
     ["Sarek National Park", 67.283337, 17.700021],
     ["Björnlandets National Park", 63.971291, 18.055406],
@@ -159,7 +161,7 @@ function initMap() {
     ["Pieljekaise National Park", 66.350583, 16.742662],
     ["Sånfjället National Park", 62.299990, 13.583215],
     ["Vadvetjåkka National Park", 68.539931, 18.434607],
-    //index for location Nationalpark South
+    //Index for Nationalpark locations South:
     ["Ängsö National Park", 59.621690, 18.764867],
     ["Tiveden National Park", 58.717104, 14.606406],
     ["Garphyttan National Park", 59.278629, 14.883532],
@@ -170,7 +172,7 @@ function initMap() {
   ];
 
   let hikingLocations = [
-    //index for location Hiking trails North
+    //Index for Hiking trails locations North:
     ["Bergslagsleden", 59.895249, 15.286127],
     ["Kebnekaise Around", 67.868110, 18.620005],
     ["Solanderleden", 65.142164, 21.504825],
@@ -178,7 +180,7 @@ function initMap() {
     ["kungsleden Abisko", 68.358473, 18.782304],
     ["Kungsleden Saltoluokta", 67.394106, 18.520452],
     ["Vasaloppsleden", 61.105255, 13.298212],
-    //index for location Hiking trails South
+    //Index for Hiking trails locations South:
     ["Bohusleden", 57.576861, 12.078465],
     ["Sörmlandsleden", 59.167825, 18.238210],
     ["Blekingeleden", 56.050123, 14.583317],
@@ -189,7 +191,7 @@ function initMap() {
   ];
 
   let nationalParkContent = [
-    //index content for Nationalparks North
+    //Index for Nationalparks content North:
     ["Muddus National Park", "<div>" +
       "<h3>Muddus National Park</h3>" +
       "<p>Muddus / Muttos National Park is the vast marshes and deep ancient forests.</p>" +
@@ -239,7 +241,7 @@ function initMap() {
       "<p>For more information <a href='https://naturkartan.se/sv/nationalparker/vadvetjakka-nationalpark' target='_blank'><span class='sr-only'>Click Here</span>Click Here</a></p>" +
       "<p><img src='./assets/images/vadvetjåkka-nationalpark.jpg' class='rounded mx-auto d-block'></p>" +
       "</div>"],
-    //index content for Nationalparks South
+    //Index for Nationalparks content South:
     ["Ängsö National Park", "<div>" +
       "<h3>Ängsö National Park</h3>" +
       "<p>At the heart of Roslagen lies Ängsö, well known for its floral splendor. Species richness is a result of the interaction between man and nature.</p>" +
@@ -293,7 +295,7 @@ function initMap() {
   ];
 
   let hikingContent = [
-    //index content for Hiking trails North
+    //Index for Hiking trails content North:
     ["Bergslagsleden", "<div>" +
       "<h3>Bergslagsleden</h3>" +
       "<p>The trail is divided into 17 stages. The hike are between 280 kilometers long.</p>" +
@@ -343,7 +345,7 @@ function initMap() {
       "<p>For more information <a href='https://www.svenskaturistforeningen.se/guider-tips/leder/vasaloppsleden/' target='_blank'><span class='sr-only'>Click Here</span>Click Here</a></p>" +
       "<p><img src='./assets/images/vasaloppsleden.jpg' class='rounded mx-auto d-block'></p>" +
       "</div>"],
-    //index content for Hiking trails South
+    //Index for Hiking trails content South:
     ["Bohusleden", "<div>" +
       "<h3>Bohusleden</h3>" +
       "<p>The trail is divided into 27 stages. The hike are between 37 kilometers long</p>" +
@@ -402,8 +404,7 @@ function initMap() {
     maxHeight: 300
   });
 
-  //displays parks locations
-
+  //Displays National parks locations:
   for (let i = 0; i < nationalParkLocations.length; i++) {
     let marker = new google.maps.Marker({
       position: new google.maps.LatLng(nationalParkLocations[i][1], nationalParkLocations[i][2]),
@@ -420,8 +421,7 @@ function initMap() {
     markers.push(marker);
   }
 
-  //displays trails locations
-
+  //Displays Hiking trails locations:
   for (let i = 0; i < hikingLocations.length; i++) {
     let marker = new google.maps.Marker({
       position: new google.maps.LatLng(hikingLocations[i][1], hikingLocations[i][2]),
@@ -444,7 +444,9 @@ function initMap() {
 infoWindow = new google.maps.InfoWindow({
   content: document.getElementById('info-content')
 });
-  // Create the autocomplete object and associate it with the UI input control place type "cities".
+  
+// Create the autocomplete object and associate it with the UI input control.
+// Restrict the search to the default country, and to place type "cities".
 
   autocomplete = new google.maps.places.Autocomplete(
     /** @type {!HTMLInputElement} */
@@ -455,22 +457,22 @@ infoWindow = new google.maps.InfoWindow({
 });
 places = new google.maps.places.PlacesService(map);
 
-
-// Event listeners.
+// Add a DOM event listener to react when the user selects a category.
 
 autocomplete.addListener('place_changed', onPlaceChanged);
 document.getElementById('category').addEventListener('change', onPlaceChanged);
-
 $('#slideshow-container').show();
-
 }
+
+// When the user selects a city, get the place details for the city and
+// zoom the map in on the city.
 
 function onPlaceChanged() {
   var place = autocomplete.getPlace();
   if ($("#accommodation").is(':selected')) {
       if (place.geometry) {
           map.panTo(place.geometry.location);
-          map.setZoom(13);
+          map.setZoom(15);
           var search = {
               bounds: map.getBounds(),
               types: ['lodging']
@@ -478,13 +480,13 @@ function onPlaceChanged() {
           doNearbySearch(search);
       }
       else {
-          $('#autocomplete').attr("placeholder", "Enter a town or city");
+          $('#autocomplete').attr("placeholder", "Enter a city");
       }
   }
   else if ($("#camping").is(':selected')) {
       if (place.geometry) {
           map.panTo(place.geometry.location);
-          map.setZoom(13);
+          map.setZoom(15);
               search = {
               bounds: map.getBounds(),
               types: ['campground']
@@ -492,13 +494,13 @@ function onPlaceChanged() {
           doNearbySearch(search);
       }
       else {
-          $('#autocomplete').attr("placeholder", "Enter a town or city");
+          $('#autocomplete').attr("placeholder", "Enter a city");
       }
   }
   else if ($("#attraction").is(':selected')) {
       if (place.geometry) {
           map.panTo(place.geometry.location);
-          map.setZoom(13);
+          map.setZoom(15);
               search = {
               bounds: map.getBounds(),
               types: ['tourist_attraction']
@@ -506,13 +508,13 @@ function onPlaceChanged() {
           doNearbySearch(search);
       }
       else {
-          $('#autocomplete').attr("placeholder", "Enter a town or city");
+          $('#autocomplete').attr("placeholder", "Enter a city");
       }
   }
   else if ($("#park").is(':selected')) {
       if (place.geometry) {
           map.panTo(place.geometry.location);
-          map.setZoom(13);
+          map.setZoom(15);
               search = {
               bounds: map.getBounds(),
               types: ['park']
@@ -520,13 +522,13 @@ function onPlaceChanged() {
           doNearbySearch(search);
       }
       else {
-          $('#autocomplete').attr("placeholder", "Enter a town or city");
+          $('#autocomplete').attr("placeholder", "Enter a city");
       }
   }
   else if ($("#travel_agency").is(':selected')) {
       if (place.geometry) {
           map.panTo(place.geometry.location);
-          map.setZoom(13);
+          map.setZoom(15);
               search = {
               bounds: map.getBounds(),
               types: ['travel_agency']
@@ -534,10 +536,12 @@ function onPlaceChanged() {
           doNearbySearch(search);
       }
       else {
-          $('#autocomplete').attr("placeholder", "Enter a town or city");
+          $('#autocomplete').attr("placeholder", "Enter a city");
       }
   }
 }
+
+// Search for the selected category in the selected city, within the viewport of the map.
 
 function doNearbySearch(search) {
 
@@ -548,7 +552,8 @@ function doNearbySearch(search) {
           clearMarkers();
           document.getElementById('results-heading').innerHTML = "Results";
           $('#slideshow-container').hide();
-          // Create a marker for each place found.
+          // Create a marker for each category found, and
+          // assign a letter of the alphabetic to each marker icon.
 
           for (var i = 0; i < results.length; i++) {
               var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
@@ -562,7 +567,8 @@ function doNearbySearch(search) {
                   icon: markerIcon
               });
 
-              // If the user clicks a marker, show the details of that place in an info window.
+              // If the user clicks a category marker, show the details of that category
+              // in an info window.
 
               markers[i].placeResult = results[i];
               google.maps.event.addListener(markers[i], 'click', showInfoWindow);
@@ -588,15 +594,12 @@ function dropMarker(i) {
   };
 }
 
-// Adds the results table into the results section div.
+// Adds the results in locationContainer -> resultsTable.
 
 function addResult(result, i) {
   let results = document.getElementById('results');
   let markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
   let markerIcon = MARKER_PATH + markerLetter + '.png';
-
-
-  // Make background transparent in results table
 
   let tr = document.createElement('tr');
   tr.style.background = ('transparent');
@@ -626,7 +629,8 @@ function clearResults() {
   }
 }
 
-// Get the place details for each search result. Show the information in an info window, anchored on the marker for the place that the user selected.
+// Get the place details for the results. Show the information in an info window,
+// anchored on the marker for the category that the user selected.
 
 function showInfoWindow() {
   let marker = this;
@@ -657,7 +661,9 @@ function buildIWContent(place) {
     document.getElementById('iw-phone-row').style.display = 'none';
   }
 
-  // Assign a five-star rating, using a black star ('&#10029;')
+  // Assign a five-star rating to the hotel, using a black star ('&#10029;')
+  // to indicate the rating the hotel has earned, and a white star ('&#10025;')
+  // for the rating points not achieved.
   if (place.rating) {
     let ratingHtml = '';
     for (let i = 0; i < 5; i++) {

@@ -1,6 +1,7 @@
 
-//I follwed this tutorial to make this contact form
-//https://www.youtube.com/watch?v=WY4rvU4ImgE
+// I follwed this tutorial to make this contact form:
+// https://www.youtube.com/watch?v=WY4rvU4ImgE
+// Email services used: https://www.emailjs.com/
 
 function validation(contactForm){
   
@@ -44,6 +45,6 @@ function validation(contactForm){
    
   alert("Thank you " + name + " for your message! We will contact you at " + email);
   /*document.getElementById("form").reset();*/
-  return true;
+  return true; // When form is sent the page will get reloaded.
    
 }

@@ -1,5 +1,5 @@
 
-//when you click on one of the links that link will be displayed in the section frame
+// Click function that will display and hide the chosen links.
 
 $(document).ready(function () {
   // Hide displayed paragraphs
@@ -29,8 +29,8 @@ $(document).ready(function () {
 });
 
 
-// picture click slide function
-// information obtain from
+// Picture click slide function.
+// Information obtain from:
 // https://www.w3schools.com/howto/howto_js_slideshow_gallery.asp
 let slideIndex = [1,1];
 let slideId = ["mySlides1"]

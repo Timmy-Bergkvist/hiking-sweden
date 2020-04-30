@@ -14,7 +14,7 @@ if(window.localStorage.getItem("note") == undefined){
 let noteEX = window.localStorage.getItem("note");
 let note = JSON.parse(noteEX);
 
-//creates a new div item
+// Creates a new div item.
 class item{
 	constructor(name){
 		this.createItem(name);
@@ -29,7 +29,7 @@ class item{
     	input.value = name;
     	input.classList.add('item_input');
 	  
-		//a trash bin remove button
+		// Trash bin remove button.
     	let remove = document.createElement('button');
     	remove.classList.add('remove');
     	remove.innerHTML = "<i class='fas fa-trash-alt'></i>";
@@ -39,7 +39,6 @@ class item{
 
         itemBox.appendChild(input);
         itemBox.appendChild(remove);
-      
     }
 
     remove(itemBox, name){
@@ -49,7 +48,7 @@ class item{
         window.localStorage.setItem("note", JSON.stringify(note));
     }
 }
-// save button
+// Save button.
 btnSave.addEventListener('click', check);
 window.addEventListener('keydown', (e) => {
 	if(e.which == 13){
@@ -65,7 +64,6 @@ function check(){
 		inputValue.value = "";
 	}
 }
-
 
 for (let v = 0 ; v < note.length ; v++){
     new item(note[v]);

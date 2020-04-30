@@ -1,3 +1,5 @@
+<a img src="/assets/images/readmefile-logo.jpg" ></a>
+
 # Hiking Sweden
 Hiking Sweden is a site for the best hiking spots in sweden, all the way from north to south.
 You can search for the best spot and find it on the map.
@@ -56,7 +58,6 @@ The index site section contains three clickable options and a map:
 **Features Left to Implement**
 
 - Host the platform on a server.
-- Set up an email so user can send request for new hiking spots.
 - Implement more features and design.
 - Implement more select options.
 
@@ -68,6 +69,8 @@ The index site section contains three clickable options and a map:
 - <a href="https://getbootstrap.com/" target="_blank"> Bootstrap </a>
 
 - <a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank"> JavaScript </a>
+
+- <a href="https://en.wikipedia.org/wiki/JQuery" target="_blank"> JQuery </a>
 
 - <a href="https://www.figma.com/" target="_blank"> Figma </a>
   
@@ -100,6 +103,7 @@ The index site section contains three clickable options and a map:
 
    **Acknowledgements**
   - I received inspiration for this project from:
+    - https://jsudron.github.io/Nordic-Discovery-Project/index.html
     - https://www.webdesign-inspiration.com/
     - https://pixabay.com/
     - https://www.youtube.com/watch?v=WY4rvU4ImgE
