@@ -26,7 +26,7 @@ function reset() {
   $('#results-heading').html("");
   map.setZoom(countries['se'].zoom);
   map.setCenter(countries['se'].center);
-  $('#slideshow-container').show();
+  $('#information-container').show();
   place = "";
 }
 
@@ -461,7 +461,7 @@ places = new google.maps.places.PlacesService(map);
 
 autocomplete.addListener('place_changed', onPlaceChanged);
 document.getElementById('category').addEventListener('change', onPlaceChanged);
-$('#slideshow-container').show();
+$('#information-container').show();
 }
 
 // When the user selects a city, get the place details for the city and
@@ -551,7 +551,7 @@ function doNearbySearch(search) {
           clearResults();
           clearMarkers();
           document.getElementById('results-heading').innerHTML = "Results";
-          $('#slideshow-container').hide();
+          $('#information-container').hide();
           // Create a marker for each category found, and
           // assign a letter of the alphabetic to each marker icon.
 

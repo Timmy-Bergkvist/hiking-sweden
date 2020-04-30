@@ -9,11 +9,9 @@ html, body {
     position: relative;
     background-position: center;
     background-attachment: fixed;
-
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-
     height: 100%;
 }
 
@@ -134,7 +132,7 @@ header {
 }
 /*--------------------------------------------------------------------*/
 
-.information-container {
+.display-container {
     background: rgba(3, 64, 2, 0.47);
     border-radius: 25px;
     padding: 10px; 
@@ -143,12 +141,8 @@ header {
 }
 @media only screen and (max-width: 414px) {
     /*making it smaller in mobile view*/
-    .information-container {
+    .display-container {
         min-height: 100px;
-    }
-    /*hide the #locationContainer displaing the results in mobile view*/
-    #locationContainer {
-        display: none;
     }
 }
 
@@ -162,22 +156,7 @@ header {
     min-height: 420px;
 }
 
-/*-----------------------------search---------------------------------*/
-
-#rating {
-    font-size: 13px;
-    font-family: Arial Unicode MS;
-  }
-  .iw_table_row {
-    height: 18px;
-  }
-  .iw_attribute_name {
-    font-weight: bold;
-    text-align: right;
-  }
-  .iw_table_icon {
-    text-align: right;
-  }
+/*--------------------------search menu container-----------------------------*/
 
 .search_wrapper * {
     margin: 0;
@@ -189,60 +168,7 @@ header {
 .search_wrapper {
     padding: 10px; 
 }
-
-.search_wrapper #pac-container {
-    width: 100%;
-    border-radius: 8px;
-    padding: 5px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    background-color: #F5F4EF;
-}
-#locationField{
-    border: none;
-    width: 100%;
-    background-color: #F5F4EF;
-    
-}
-
-#autocomplete{
-    background-color: #F5F4EF;
-    border: none;
-    width: 100%;
-    
-}
-
-#category {
-    background-color: transparent;
-    border: none;
-    width: 100%;
-}
-.category-container{
-    width: 100%;
-    border-radius: 8px;
-    padding: 5px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    background-color: #F5F4EF;
-}
-.category-container #controls {
-    background-color: #F5F4EF;
-    width: 100%;
-    border: none;
-}
-
-#reset {
-    background: none;
-    border: none;
-    cursor: pointer;
-    float: right;
-}
-
-#reset i {
-    color: #F5F4EF;
-    font-size: 1.2rem;
-}
-
+/*----------------controls-reset-category---------------*/
 .pac-card {
     /*margin: 10px 10px 0 0;*/
     border-radius: 2px 0 0 2px;
@@ -251,42 +177,96 @@ header {
     outline: none;
     font-family: 'Oswald', sans-serif;
     color: #F5F4EF;
-  }
+}
 
-  #pac-container {
-    padding-bottom: 12px;
-    margin-right: 12px;
-  }
-
-  .pac-controls {
+.pac-controls {
     display: inline-block;
     padding: 5px 11px;
     background-color: #F5F4EF;
     border-radius: 8px;
     width: 80%;
-  }
+}
 
-  .pac-controls label {
+.pac-controls label {
     font-family: 'Oswald', sans-serif;
     font-size: 13px;
     font-weight: 300;
-  }
+}
+
+#locationField{
+    border: none;
+    width: 100%;
+    background-color: #F5F4EF;
+}
+
+#autocomplete{
+    background-color: #F5F4EF;
+    border: none;
+    width: 100%;
+}
+
+#resetBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    float: right;
+}
+
+#resetBtn i {
+    color: #F5F4EF;
+    font-size: 1.2rem;
+}
+
+.category-container{
+    width: 100%;
+    border-radius: 8px;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-color: #F5F4EF;
+}
+
+.category-container #controls {
+    background-color: #F5F4EF;
+    width: 100%;
+    border: none;
+}
+
+#category {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+}
 
 #locationContainer {
     padding: 10px; 
     overflow-x: hidden; 
     overflow-y: auto;
     max-height: 180px;
-    min-height: 300px;
+    min-height: 292px;
     resize: none;
 }
-
-#slideshow-text{
+@media only screen and (max-width: 414px) {
+    /*hide the #locationContainer displaing the results in mobile view*/
+    #locationContainer {
+        display: none;
+    }
+}
+/*------------------Result box----------------------*/
+#information-headline{
     font-family: 'Oswald', sans-serif;
     color: #F5F4EF;
     text-align: center;
-    padding-bottom: 5px;
+    padding-top: 15px;
+    
 }
+#information-undrline{
+    font-family: 'Oswald', sans-serif;
+    color: #F5F4EF;
+    text-align: center;
+    padding-top: 10px;
+}
+
 #results-heading{
     font-family: 'Oswald', sans-serif;
     color: #F5F4EF;
@@ -305,13 +285,31 @@ header {
     padding-right: 5px;
 }
 
+/*-------------info-content displayed in google maps-------------------*/
+
 /*google map info box*/
 .gm-style-iw {
     border: 2px solid rgba(3, 64, 2, 0.47);
     font-family: 'Oswald', sans-serif;
     color: rgba(3, 64, 2, 0.897);
 }
-/*-----------------------------notes---------------------------------*/
+
+#rating {
+    font-size: 13px;
+    font-family: Arial Unicode MS;
+  }
+  .iw_table_row {
+    height: 18px;
+  }
+  .iw_attribute_name {
+    font-weight: bold;
+    text-align: right;
+  }
+  .iw_table_icon {
+    text-align: right;
+  }
+/*-------------------------------------------------------------------*/
+/*--------------------------notes form box---------------------------*/
 
 .notes_wrapper * {
     margin: 0;
@@ -352,15 +350,6 @@ header {
     border: none;
 }
 
-.noteContainer {
-    font-family: 'Oswald', sans-serif;
-    border-radius: 8px;
-    padding: 10px; 
-    max-height: 200px;
-    min-height: 200px;
-    /*background-color: #DFD2AE;*/
-}
-
 .notesbox{
     font-family: 'Oswald', sans-serif;
     overflow-x: hidden; 
@@ -377,6 +366,14 @@ header {
     }
 }
 
+.noteContainer {
+    font-family: 'Oswald', sans-serif;
+    border-radius: 8px;
+    padding: 10px; 
+    max-height: 200px;
+    min-height: 200px;
+}
+/*---------------------notes---------------*/
 .item_input {
     width: 88%;
     height: 35px;
@@ -407,9 +404,8 @@ header {
 .remove i {
     color: #000000;
 }
-
-
-/*-----------------------------contact---------------------------------*/
+/*-------------------------------------------------------------------*/
+/*--------------------------contact form box-------------------------*/
 
 .contact_wrapper * {
     margin: 0;
@@ -435,7 +431,6 @@ header {
 
 .contact_wrapper .input_field {
     margin-bottom: 5px;
-    
 }
 
 #form {
@@ -463,6 +458,7 @@ header {
     background-color: #F5F4EF;
     cursor: pointer;
 }
+
 .contact_wrapper .btn input[type="submit"]:hover{
     background: rgb(197, 196, 189);
     transition:  0.5s ease-in;
@@ -497,6 +493,7 @@ header {
     font-family: 'Oswald', sans-serif;
     color: #F5F4EF;
 }
+
 .sub-text-font{
     color: #F5F4EF;
 }
@@ -509,50 +506,4 @@ header {
 
 .social-links li a i:hover{
     color: rgb(77, 77, 77);
-}
-
-
-/*-----------*/
-
-* {box-sizing: border-box}
-.mySlides1 {display: none}
-img {
-    vertical-align: middle;
-    border-radius: 8px;
-}
-
-/* Slideshow container */
-#slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-  
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a grey background color */
-.prev:hover, .next:hover {
-  background-color: #f1f1f1;
-  color: #F5F4EF;
 }

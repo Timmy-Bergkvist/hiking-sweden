@@ -1,8 +1,11 @@
 ![Image of sweden](https://timmy-bergkvist.github.io/hiking-sweden/assets/images/readmefile-logo.jpg)
 
 # Hiking Sweden
-Hiking Sweden is a site for the best hiking spots in sweden, all the way from north to south.
-You can search for the best spot and find it on the map.
+Hiking Sweden is a website that has pinpointed different hiking trails and national parks in Sweden, 
+all the way from north to south.
+Here you can also search for different categories such as hotel, camping or other attractions around Sweden,
+which will appear on the map
+
 ## UX
 
 This hiking site is intended for hikers who want to hike the best spots in sweden.
