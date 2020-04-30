@@ -1,4 +1,4 @@
-<a img src="/assets/images/readmefile-logo.jpg" ></a>
+![Image of sweden](https://timmy-bergkvist.github.io/hiking-sweden/assets/images/readmefile-logo.jpg)
 
 # Hiking Sweden
 Hiking Sweden is a site for the best hiking spots in sweden, all the way from north to south.
