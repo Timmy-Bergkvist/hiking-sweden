@@ -5,23 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        type="text/css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-        type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css"
-        type="text/css" />
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+
     <title>Hiking Sweden</title>
-    <!--JsEmail-->
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("user_06t3L909DoJC4YF37CSuP");
-            // emailjs.send("gmail", "example");
-        })();
-    </script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+
 </head>
 
 <body>
@@ -46,21 +37,22 @@
             <div class="section-frame">
                 <!----------Search--Notes--Contact--links--------->
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 interactive-links row-nogutters">
-                    <div id="search-header"><a><i class="fas fa-search"><span>Search</span></i></a></div>
-                    <div id="notes-header"><a><i class="fas fa-pencil-alt"><span>Notes</span></i></a></div>
-                    <div id="contact-header"><a><i class="fas fa-envelope"><span>Contact</span></i></a></div>
+                    <div id="search-header" onclick="changeTab('search')" ><a><i class="fas fa-search"><span> Search</span></i></a></div>
+                    <div id="notes-header" onclick="changeTab('notes')" ><a><i class="fas fa-pencil-alt"><span> Notes</span></i></a></div>
+                    <div id="contact-header" onclick="changeTab('contact')"><a><i class="fas fa-envelope"><span> Contact</span></i></a></div>
                 </div>
                 <div class="row justify-content-around">
                     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 display-container">
                         <!------------Search menu--------------->
-                        <div id="div1" class="search_wrapper">
+                        <div id="search" class="search_wrapper">
                             <div class="pac-card" id="pac-card">
                                 <div class="pac-controls">
-                                    <div id="locationField">
+                                    <div class="form-inline" id="locationField">
                                         <input id="autocomplete" placeholder="Enter a city" type="text" />
+                                        <button id="resetBtn" type="button" onclick="reset()">Reset</button>
                                     </div>
                                 </div>
-                                <button id="resetBtn" type="button" onclick="reset()"><i class="fas fa-undo-alt"></i></button>
+                                
                                 <div class="category-container" id="controls">
                                     <select id="category">
                                         <option value="" selected>Select</option>
@@ -71,6 +63,7 @@
                                         <option id="travel_agency" value="accommodation">Travel agency</option>
                                     </select>
                                 </div>
+                                
                             </div>
 
                             <!----------Result box---------->
@@ -119,7 +112,7 @@
                             </div>
                         </div>
                         <!---------------Notes form--------------->
-                        <div id="div2" class="notes_wrapper" style="display:none;">
+                        <div id="notes" class="notes_wrapper" style="display:none;">
                             <div class="inputDiv">
                                 <textarea class="input" placeholder="Write down your notes"></textarea>
                                 <div class="note-button">
@@ -131,13 +124,13 @@
                             </div>
                         </div>
                         <!--------------Contact form-------------->
-                        <div id="div3" class="contact_wrapper" style="display:none;">
+                        <div id="contact" class="contact_wrapper" style="display:none;">
                             <h2>Contact Us</h2>
                             <p>If you have any questions or would like to add a hiking spot, please contact us</p>
 
                             <div id="errorMessage"></div>
 
-                            <form id="form" onsubmit="return validation(this);">
+                            <form id="form">
                                 <div class="input_field">
                                     <input type="text" placeholder="Name" id="name">
                                 </div>
@@ -148,7 +141,7 @@
                                     <textarea id="message" placeholder="Message"></textarea>
                                 </div>
                                 <div class="btn">
-                                    <input type="submit" value="Send">
+                                    <input onclick="submitInfo()" type="button" value="Send">
                                 </div>
                             </form>
                         </div>
@@ -191,27 +184,29 @@
             </div>
         </div>
     </footer>
-
-    <!---------JavaScrip scripts--------->
-    <script src="assets/js/notes.js"></script>
-    <script src="assets/js/contact.js"></script>
+    <!---------JavaScrip maps--------->
+    <script src="assets/js/maps.js"></script>
 
     <!-------------JQuery-Popper-Bootstrap------------>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="assets/js/main.js"></script>
 
+    <!--------JsEmail------->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    
     <!---Google maps API--->
-    <script src="assets/js/maps.js"></script>
-    <script
-        src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCze_jon7Ztcumh8MTGW-ef_MkRIh_Yc-M&libraries=geometry,places&callback=initMap"
-        async defer></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCze_jon7Ztcumh8MTGW-ef_MkRIh_Yc-M&libraries=geometry,places&callback=initMap" async defer></script>
 
     <!-------Fontawesome------->
     <script src="https://kit.fontawesome.com/4fdc8c1c9c.js"></script>
+
+    <!---------JavaScrip scripts--------->
+    <script src="assets/js/notes.js"></script>
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/js/main.js"></script>
+
 </body>
 
 </html>

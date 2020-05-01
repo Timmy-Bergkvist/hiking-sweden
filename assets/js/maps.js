@@ -472,7 +472,7 @@ function onPlaceChanged() {
   if ($("#accommodation").is(':selected')) {
       if (place.geometry) {
           map.panTo(place.geometry.location);
-          map.setZoom(15);
+          map.setZoom(13);
           var search = {
               bounds: map.getBounds(),
               types: ['lodging']
@@ -486,7 +486,7 @@ function onPlaceChanged() {
   else if ($("#camping").is(':selected')) {
       if (place.geometry) {
           map.panTo(place.geometry.location);
-          map.setZoom(15);
+          map.setZoom(13);
               search = {
               bounds: map.getBounds(),
               types: ['campground']
@@ -500,7 +500,7 @@ function onPlaceChanged() {
   else if ($("#attraction").is(':selected')) {
       if (place.geometry) {
           map.panTo(place.geometry.location);
-          map.setZoom(15);
+          map.setZoom(13);
               search = {
               bounds: map.getBounds(),
               types: ['tourist_attraction']
@@ -514,7 +514,7 @@ function onPlaceChanged() {
   else if ($("#park").is(':selected')) {
       if (place.geometry) {
           map.panTo(place.geometry.location);
-          map.setZoom(15);
+          map.setZoom(13);
               search = {
               bounds: map.getBounds(),
               types: ['park']
@@ -528,7 +528,7 @@ function onPlaceChanged() {
   else if ($("#travel_agency").is(':selected')) {
       if (place.geometry) {
           map.panTo(place.geometry.location);
-          map.setZoom(15);
+          map.setZoom(13);
               search = {
               bounds: map.getBounds(),
               types: ['travel_agency']

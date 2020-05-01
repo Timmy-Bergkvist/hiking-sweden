@@ -177,14 +177,18 @@ header {
     outline: none;
     font-family: 'Oswald', sans-serif;
     color: #F5F4EF;
+    display: inline;
 }
 
+
 .pac-controls {
+    /*
     display: inline-block;
     padding: 5px 11px;
     background-color: #F5F4EF;
+    */
     border-radius: 8px;
-    width: 80%;
+    width: 100%;
 }
 
 .pac-controls label {
@@ -196,29 +200,46 @@ header {
 #locationField{
     border: none;
     width: 100%;
-    background-color: #F5F4EF;
+    /*background-color: #F5F4EF;*/
+    border-radius: 8px;
 }
 
 #autocomplete{
     background-color: #F5F4EF;
     border: none;
-    width: 100%;
+    width: 80%;
+    border-radius: 8px;
+    padding: 5px;
+    margin-right: auto;
 }
 
 #resetBtn {
-    background: none;
-    border: none;
+    font-family: 'Oswald', sans-serif;
+    color: rgb(0, 0, 0);
     cursor: pointer;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background-color: #F5F4EF;
+    padding:5px;
+    width: 55px;
     float: right;
 }
-
-#resetBtn i {
-    color: #F5F4EF;
-    font-size: 1.2rem;
+@media only screen and (max-width: 320px) {
+    /*making it smaller in iphone 5 mobile view*/
+    #resetBtn {
+        width: 45px;
+    }
+}
+@media only screen and (max-width: 998px){
+    /*making it smaller in ipad view*/
+    #resetBtn{
+        font-size: 13px;
+        width: 39px;
+    }
 }
 
 .category-container{
-    width: 100%;
+    width: 80%;
     border-radius: 8px;
     padding: 5px;
     margin-bottom: 10px;
@@ -296,14 +317,14 @@ header {
 
 #rating {
     font-size: 13px;
-    font-family: Arial Unicode MS;
+    font-family: 'Oswald', sans-serif;
   }
   .iw_table_row {
     height: 18px;
   }
   .iw_attribute_name {
     font-weight: bold;
-    text-align: right;
+    
   }
   .iw_table_icon {
     text-align: right;
@@ -450,7 +471,7 @@ header {
     resize: none;
 }
 
-.contact_wrapper .btn input[type="submit"] {
+.contact_wrapper .btn input[type="button"] {
     border: 0;
     border-radius: 8px;
     padding:5px;
@@ -459,7 +480,7 @@ header {
     cursor: pointer;
 }
 
-.contact_wrapper .btn input[type="submit"]:hover{
+.contact_wrapper .btn input[type="button"]:hover{
     background: rgb(197, 196, 189);
     transition:  0.5s ease-in;
 }
