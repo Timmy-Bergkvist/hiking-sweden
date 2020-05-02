@@ -14,21 +14,20 @@ and who want to look for other alternatives in Sweden.
 The index site section contains three clickable options and a map:
 
 - Search
-  - This is the first section the use will see.
+  - This is the first section the user will see.
     When clicking the search text a search box will be visible for the user. 
-    In this box can the user search for lokations and select different category.
+    In this box can the user search for lokations and select different categories.
     which will appear on the map and will be viewed as pins in the results box. 
     In mobile view the result box will not be visible.
   
 - Notes
   - When clicking the notes text a notepad will be visible for the user. The user can take notes from the
-    locations they want to visit. There is an option to save and delit notes.
+    locations they want to visit. There is an option to save and delete notes.
     The files will then be stored in the local host.
   
 - Contact
   - When clicking the contact a contact-us form will be visible for the user. The user can send a
     request or ask for questions that they will have answered.
-    When the user sends a request, the web page will be reloaded to its starting point which is the search section.
 
 - Map
   - The map is visible all the time. On the map will there be some pre selected areas for hiking trails and 
@@ -54,11 +53,11 @@ The index site section contains three clickable options and a map:
 **Existing Features**
 
 - Interactive links: Allows the user to choose between search, notes and contact links.
-- Search: Allows the user to search for different locations to displayed on the map.
-- Select options: Allows the user to select different category to be displayd.
+- Search: Allows the user to search for different locations to be displayed on the map.
+- Select options: Allows the user to select different category to be displayed.
 - Reset button: Allows the user to reset all selections.
-- Notes: Allows the user to write and save notes.
-- Contact form: Allows the user to fill aout a form with name, email and description.
+- Notes: Allows the user to write, save and delete notes.
+- Contact form: Allows the user to fill out a form with name, email and description.
 - Map: Allows the user to interact with the map an lock for different locations.
 - Social media button: Allows the user to direct link to social networks.
 
