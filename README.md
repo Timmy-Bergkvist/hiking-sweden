@@ -3,21 +3,21 @@
 # Hiking Sweden
 Hiking Sweden is a website that has pinpointed different hiking trails and national parks in Sweden, 
 all the way from north to south.
-Here you can also search for different categories such as hotel, camping or other attractions around Sweden,
-which will appear on the map
+You can also search for different categories such as hotels, campings and other attractions around Sweden,
+which will appear on the map.
 
 ## UX
 
-This site is intended for user thats are interested in different hiking trails and national parks
-and who want to look for other alternatives in Sweden.
+This site is intended for users that are interested in different hiking trails and national parks
+and want to look for other alternatives in Sweden.
 
 The index site section contains three clickable options and a map:
 
 - Search
-  - This is the first section the user will see.
+  - This is the first section that the user will see.
     When clicking the search text a search box will be visible for the user. 
-    In this box can the user search for lokations and select different categories.
-    which will appear on the map and will be viewed as pins in the results box. 
+    In this box the user can search for locations and select different categories.
+    which will appear on the map and will be displayed as pins in the results box. 
     In mobile view the result box will not be visible.
   
 - Notes
@@ -26,14 +26,13 @@ The index site section contains three clickable options and a map:
     The files will then be stored in the local host.
   
 - Contact
-  - When clicking the contact a contact-us form will be visible for the user. The user can send a
-    request or ask for questions that they will have answered.
+  - When clicking the contact a contact us form will be visible for the user. The user can send a
+    request that willl be sent to a specific email adress.
 
 - Map
-  - The map is visible all the time. On the map will there be some pre selected areas for hiking trails and 
-    national parks. When the user is searching for a location and gets a result there will be
-    pin on the map. When clicking on this pin a information box will be displayed for the
-    user with information about that place.
+  - The map is visible all the time. On the map there will be some pre selected areas for hiking trails and 
+    national parks. When the user is searching for a location and gets a result a pin on the map will appear. 
+    When clicking on this pin a information box will be displayed for the user with information about that place.
     There will be links that take the user to their website.
 
 
@@ -54,18 +53,19 @@ The index site section contains three clickable options and a map:
 
 - Interactive links: Allows the user to choose between search, notes and contact links.
 - Search: Allows the user to search for different locations to be displayed on the map.
-- Select options: Allows the user to select different category to be displayed.
+- Select options: Allows the user to select different categories to be displayed.
 - Reset button: Allows the user to reset all selections.
 - Notes: Allows the user to write, save and delete notes.
 - Contact form: Allows the user to fill out a form with name, email and description.
-- Map: Allows the user to interact with the map an lock for different locations.
-- Social media button: Allows the user to direct link to social networks.
+- Map: Allows the user to interact with the map and look for different locations.
+- Social media button: Allows the user to be redirected to social media platforms.
 
 **Features Left to Implement**
 
 - Host the platform on a server.
 - Implement more features and design.
 - Implement more select options.
+- Implement an edit button in the Notes section.
 
 ## Technologies Used
 - <a href="https://en.wikipedia.org/wiki/HTML" target="_blank"> Html </a>
@@ -108,7 +108,7 @@ The index site section contains three clickable options and a map:
     - <a href="https://naturkartan.se/sv" target="_blank"> Natur kartan</a>
 
    **Acknowledgements**
-  - I received inspiration for this project from:
+  - Inspiration for this project was obtained from:
     - https://jsudron.github.io/Nordic-Discovery-Project/index.html
     - https://www.webdesign-inspiration.com/
     - https://pixabay.com/
