@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Oswald|Ramabhadra&display=swap');
 
-/*-------------------------Background picture---------------------------*/
+/*-----------------------<-Background picture->-------------------------*/
 
 html, body {
     background: linear-gradient( rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.24)),  url(../images/background-picture.jpg) no-repeat;
@@ -23,14 +23,20 @@ html, body {
 #container {
     min-height: 100%;
 }
+@media only screen and (max-width: 768px) {
+    /*making it smaller in tablet view*/
+    #container {
+        min-height: 87%;
+    }
+}
 
 #main {
     overflow: auto;
     padding-bottom: 30px;
 }
 
-/*----------------------------Header--------------------------------*/
-.test{
+/*----------------------------<-Header->------------------------------*/
+.header{
     display: flex;
     justify-content: center;
 }
@@ -40,14 +46,13 @@ html, body {
     background-repeat: no-repeat;
     background-size: contain;
     transform: rotate(8.83deg);
-    /*margin-top: 10px;*/
     width: 45px;
 }
+
 @media only screen and (max-width: 481px) {
     #sweden-logo {
         display: none;
     }
-    
 }
 
 header {
@@ -59,7 +64,6 @@ header {
     font-family: 'Oswald', sans-serif;
     font-weight: 100;
     font-size: 4rem;
-    /*margin-top: 50px;*/
     color: rgb(3, 64, 2);
     margin-left: 20px;
     letter-spacing: 3px;
@@ -74,12 +78,19 @@ header {
     color: rgb(3, 64, 2);
 }
 
+@media only screen and (max-width: 367px){
+    #headline{
+        font-size: 2.2rem;
+    }
+    #underline{
+        margin-left: 18px;
+    }
+}
+
 #headline-container{
-    /*padding-top: 30px;*/
     padding-left: 46px;
 }
 
-/*-------braking point for tablet and iphone------*/
 @media only screen and (max-width: 483px) {
     /*making it smaller in mobile view*/
     #headline-container {
@@ -95,22 +106,14 @@ header {
         margin-left: 0;
     }
 }
-@media only screen and (max-width: 367px){
-    #headline{
-        font-size: 2.2rem;
-    }
-    #underline{
-        margin-left: 18px;
-    }
-}
 
-/*----------------------------Section--------------------------------*/
+/*--------------------------<-Section->------------------------------*/
 .section-frame {
     margin-left: 40px;
     margin-right: 40px;
 }
 
-/*-----------------------section-frame-links--------------------------*/
+/*-----------section-frame-links-----------*/
 .interactive-links {
     text-align: center;
     font-family: 'Oswald', sans-serif;
@@ -141,7 +144,7 @@ header {
     font-family: 'Oswald', sans-serif;
     cursor: pointer;
 }
-/*--------------------------------------------------------------------*/
+/*-----------------------<-Display and Map container->-----------------------*/
 
 .display-container {
     background: rgba(3, 64, 2, 0.47);
@@ -167,7 +170,7 @@ header {
     min-height: 420px;
 }
 
-/*--------------------------search menu container-----------------------------*/
+/*------------------------<-search menu container->---------------------------*/
 
 .search_wrapper * {
     margin: 0;
@@ -179,9 +182,8 @@ header {
 .search_wrapper {
     padding: 10px; 
 }
-/*----------------controls-reset-category---------------*/
+/*----------controls-reset-category----------*/
 .pac-card {
-    /*margin: 10px 10px 0 0;*/
     border-radius: 2px 0 0 2px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -191,13 +193,7 @@ header {
     display: inline;
 }
 
-
 .pac-controls {
-    /*
-    display: inline-block;
-    padding: 5px 11px;
-    background-color: #F5F4EF;
-    */
     border-radius: 8px;
     width: 100%;
 }
@@ -211,7 +207,6 @@ header {
 #locationField{
     border: none;
     width: 100%;
-    /*background-color: #F5F4EF;*/
     border-radius: 8px;
 }
 
@@ -235,17 +230,10 @@ header {
     width: 55px;
     float: right;
 }
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 360px) {
     /*making it smaller in iphone 5 mobile view*/
     #resetBtn {
         width: 45px;
-    }
-}
-@media only screen and (max-width: 998px){
-    /*making it smaller in ipad view*/
-    #resetBtn{
-        font-size: 13px;
-        width: 39px;
     }
 }
 
@@ -270,6 +258,7 @@ header {
     width: 100%;
 }
 
+/*----------------Result box--------------*/
 #locationContainer {
     padding: 10px; 
     overflow-x: hidden; 
@@ -278,13 +267,14 @@ header {
     min-height: 292px;
     resize: none;
 }
+
 @media only screen and (max-width: 414px) {
     /*hide the #locationContainer displaing the results in mobile view*/
     #locationContainer {
         display: none;
     }
 }
-/*------------------Result box----------------------*/
+
 #information-headline{
     font-family: 'Oswald', sans-serif;
     color: #F5F4EF;
@@ -317,7 +307,7 @@ header {
     padding-right: 5px;
 }
 
-/*-------------info-content displayed in google maps-------------------*/
+/*--------info-content displayed in google maps----------*/
 
 /*google map info box*/
 .gm-style-iw {
@@ -340,8 +330,8 @@ header {
   .iw_table_icon {
     text-align: right;
   }
-/*-------------------------------------------------------------------*/
-/*--------------------------notes form box---------------------------*/
+
+/*---------------------------<-notes form box->---------------------------*/
 
 .notes_wrapper * {
     margin: 0;
@@ -405,7 +395,7 @@ header {
     max-height: 200px;
     min-height: 200px;
 }
-/*---------------------notes---------------*/
+/*------------------notes---------------*/
 .item_input {
     width: 88%;
     height: 35px;
@@ -436,8 +426,8 @@ header {
 .remove i {
     color: #000000;
 }
-/*-------------------------------------------------------------------*/
-/*--------------------------contact form box-------------------------*/
+
+/*--------------------------<-contact form box->----------.-------------*/
 
 .contact_wrapper * {
     margin: 0;
@@ -505,7 +495,7 @@ header {
     font-size: 16px;
     transition: all 0.5s ease;
 }
-/*-----------------------------Footer---------------------------------*/
+/*-----------------------------<-Footer->---------------------------------*/
 
 #footer {
     background: rgba(3, 64, 2, 0.47);
