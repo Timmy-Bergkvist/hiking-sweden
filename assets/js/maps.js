@@ -576,6 +576,13 @@ function doNearbySearch(search) {
               addResult(results[i], i);
           }
       }
+      //If no results is found. No results! will be displayed and clear all the markers.
+
+       else {
+        document.getElementById('results-heading').innerHTML = "No Results!";
+        clearResults();
+        clearMarkers();
+      }
   });
 }
 
