@@ -1,13 +1,10 @@
 
 //Most of the information to make google maps can you get here:
 //https://developers.google.com/maps/documentation/javascript/examples/place-details
-//Some of the code and help-inspiration was obtain from:
-//https://jsudron.github.io/Nordic-Discovery-Project/index.html
 
 let map, places, infoWindow;
 let markers = [];
 let autocomplete;
-//let countryRestrict = { 'country': 'se' };
 let MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
 let hostnameRegexp = new RegExp('^https?://.+?/');
 
@@ -17,6 +14,8 @@ let countries = {
     zoom: 4
   }
 };
+
+//Reset function to reset all the results and options.
 
 function reset() {
   clearResults();
@@ -398,13 +397,13 @@ function initMap() {
 
   ];
 
-
   let markers = [];
   let ginfowindow = new google.maps.InfoWindow({
     maxHeight: 300
   });
 
   //Displays National parks locations:
+
   for (let i = 0; i < nationalParkLocations.length; i++) {
     let marker = new google.maps.Marker({
       position: new google.maps.LatLng(nationalParkLocations[i][1], nationalParkLocations[i][2]),
@@ -422,6 +421,7 @@ function initMap() {
   }
 
   //Displays Hiking trails locations:
+
   for (let i = 0; i < hikingLocations.length; i++) {
     let marker = new google.maps.Marker({
       position: new google.maps.LatLng(hikingLocations[i][1], hikingLocations[i][2]),
@@ -453,9 +453,10 @@ infoWindow = new google.maps.InfoWindow({
     (
         document.getElementById('autocomplete')), {
     types: ['(cities)'],
-    componentRestrictions: { country: [ 'se'] }
+    componentRestrictions: { country: ['se'] }
 });
 places = new google.maps.places.PlacesService(map);
+
 
 // Add a DOM event listener to react when the user selects a category.
 
@@ -464,16 +465,16 @@ document.getElementById('category').addEventListener('change', onPlaceChanged);
 $('#information-container').show();
 }
 
-// When the user selects a city, get the place details for the city and
+// When the user selects a city, they will get the place details for the city and
 // zoom the map in on the city.
 
 function onPlaceChanged() {
-  var place = autocomplete.getPlace();
+  let place = autocomplete.getPlace();
   if ($("#accommodation").is(':selected')) {
       if (place.geometry) {
           map.panTo(place.geometry.location);
           map.setZoom(13);
-          var search = {
+          let search = {
               bounds: map.getBounds(),
               types: ['lodging']
           };
@@ -552,12 +553,13 @@ function doNearbySearch(search) {
           clearMarkers();
           document.getElementById('results-heading').innerHTML = "Results";
           $('#information-container').hide();
+
           // Create a marker for each category found, and
           // assign a letter of the alphabetic to each marker icon.
 
-          for (var i = 0; i < results.length; i++) {
-              var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
-              var markerIcon = MARKER_PATH + markerLetter + '.png';
+          for (let i = 0; i < results.length; i++) {
+              let markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
+              let markerIcon = MARKER_PATH + markerLetter + '.png';
 
               // Use marker animation to drop the icons incrementally on the map.
 
@@ -576,8 +578,8 @@ function doNearbySearch(search) {
               addResult(results[i], i);
           }
       }
-      //If no results is found. No results! will be displayed and clear all the markers.
 
+      //If no results is found. No results! will be displayed and clear all the markers.
        else {
         document.getElementById('results-heading').innerHTML = "No Results!";
         clearResults();
@@ -601,8 +603,8 @@ function dropMarker(i) {
   };
 }
 
-// Adds the results in locationContainer -> resultsTable.
-
+// Adds the results in locationContainer
+// and displays results in the resultsTable.
 function addResult(result, i) {
   let results = document.getElementById('results');
   let markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
@@ -647,13 +649,14 @@ function showInfoWindow() {
         return;
       }
       infoWindow.open(map, marker);
-      buildIWContent(place);
+      buildPopUpContent(place);
 
     });
 }
 
 // Load the place information into the HTML elements used by the info window.
-function buildIWContent(place) {
+
+function buildPopUpContent(place) {
   document.getElementById('iw-icon').innerHTML = '<img class="hotelIcon" ' +
     'src="' + place.icon + '"/>';
   document.getElementById('iw-url').innerHTML = '<b><a href="' + place.url +

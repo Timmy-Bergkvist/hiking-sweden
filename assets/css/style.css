@@ -21,7 +21,7 @@ html, body {
 }
 
 #container {
-    min-height: 100%;
+    min-height: 89%;
 }
 @media only screen and (max-width: 768px) {
     /*making it smaller in tablet view*/
@@ -111,6 +111,11 @@ header {
 .section-frame {
     margin-left: 40px;
     margin-right: 40px;
+}
+@media only screen and (min-width: 1600px) {
+    .section-frame{
+        margin-top: 67px
+    }
 }
 
 /*-----------section-frame-links-----------*/
@@ -233,7 +238,7 @@ header {
 @media only screen and (max-width: 360px) {
     /*making it smaller in iphone 5 mobile view*/
     #resetBtn {
-        width: 45px;
+        width: 42px;
     }
 }
 
