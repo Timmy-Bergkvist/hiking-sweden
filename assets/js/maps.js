@@ -219,7 +219,7 @@ function initMap() {
       "<p>In the Skuleskogen you will find one of the few remaining large forests in the coastal country.</p>" +
       "<p>Here you can hike for days, enjoy lush brook forests or go out on the barren hillsides and be enchanted by the powerful views.</p>" +
       "<p>For more information <a href='https://naturkartan.se/sv/nationalparker/skuleskogen-nationalpark' target='_blank'><span class='sr-only'>Click Here</span>Click Here</a></p>" +
-      "<p><img src='./assets/images/Skuleskogen-nationalpark.jpg' class='rounded mx-auto d-block'></p>" +
+      "<p><img src='./assets/images/skuleskogen-nationalpark.jpg' class='rounded mx-auto d-block'></p>" +
       "</div>"],
     ["Pieljekaise National Park", "<div>" +
       "<h3>Pieljekaise National Park</h3>" +
