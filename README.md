@@ -101,6 +101,8 @@ The index site section contains three clickable options and a map:
   - The CSS code is run and tested at:
     - https://jigsaw.w3.org/css-validator/#validate_by_input
     
+  - The JavaScript is run and tested at:
+    - https://jshint.com/  
     
   - Search
     - Click on the "Search" header and the "Search" section will appear.

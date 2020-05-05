@@ -3,18 +3,18 @@
 
 function changeTab(tab) {
   if (tab === 'search') {
-    $('#search').show()
+    $('#search').show();
   } else {
-    $('#search').hide()
+    $('#search').hide();
   }
   if (tab === 'contact') {
-    $('#contact').show()
+    $('#contact').show();
   } else {
-    $('#contact').hide()
+    $('#contact').hide();
   }
   if (tab === 'notes') {
-    $('#notes').show()
+    $('#notes').show();
   } else {
-    $('#notes').hide()
+    $('#notes').hide();
   }
 }

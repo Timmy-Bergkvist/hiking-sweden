@@ -57,7 +57,7 @@ window.addEventListener('keydown', (e) => {
 	if(e.which == 13){
 		check();
 	}
-})
+});
 
 function check(){
 	if(inputValue.value != ""){
