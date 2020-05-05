@@ -129,6 +129,7 @@ The index site section contains three clickable options and a map:
  
   - Bugs
     - If the map is not displaying please reload the page, this may be due to that google maps api is not connecting properly.
+    - If the fonts is not displaying please reload the page, this may be due to that fontawesome.com api is not connecting properly.
   
 ## Deployment
   
@@ -156,3 +157,4 @@ The index site section contains three clickable options and a map:
     - https://www.svenskaturistforeningen.se/guider-tips/leder/
     - https://cloud.google.com/maps-platform/
     - https://www.w3schools.com/
+    - https://fontawesome.com/icons?d=gallery
