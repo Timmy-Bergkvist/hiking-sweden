@@ -9,7 +9,17 @@ which will appear on the map.
 ## UX
 
 This site is intended for users that are interested in different hiking trails and national parks
-and want to look for other alternatives in Sweden.
+and want to look for other alternatives in Sweden. This site is designed for mobile, tablet and desktop users.
+
+- User type.
+  - People or families that are interested in hiking and traveling.
+
+  - People who are traveling and want to see more of Sweden and our pre-selected 
+    hiking trails and national parks.
+
+  - For hikers that are out hiking and want to find a hotel or a tourist attraction near by.
+    Have we provided a search option with different categories that may suit them.
+
 
 The index site section contains three clickable options and a map:
 
@@ -54,7 +64,7 @@ The index site section contains three clickable options and a map:
 - Interactive links: Allows the user to choose between search, notes and contact links.
 - Search: Allows the user to search for different locations to be displayed on the map.
 - Select options: Allows the user to select different categories to be displayed.
-- Reset button: Allows the user to reset all selections.
+- Reset button: Allows the user to reset all selections and can start over again and do another search.
 - Notes: Allows the user to write, save and delete notes.
 - Contact form: Allows the user to fill out a form with name, email and description.
 - Map: Allows the user to interact with the map and look for different locations.

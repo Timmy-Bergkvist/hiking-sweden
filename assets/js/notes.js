@@ -20,9 +20,12 @@ class item{
 		this.createItem(name);
 	}
     createItem(name){
+
+		// Creates a div inside the noteContainer.
     	let itemBox = document.createElement('div');
         itemBox.classList.add('item');
 
+		// Creates input text inside the div item.
     	let input = document.createElement('input');
     	input.type = "text";
     	input.disabled = true;
@@ -65,6 +68,7 @@ function check(){
 	}
 }
 
+// Displays all the notes.
 for (let v = 0 ; v < note.length ; v++){
     new item(note[v]);
 }

@@ -1,6 +1,7 @@
 
 // I follwed this tutorial to make this contact form:
 // https://www.youtube.com/watch?v=WY4rvU4ImgE
+// I follwed Codeinstitute tutorial to set up this mail function:
 // Email services used: https://www.emailjs.com/
 
 

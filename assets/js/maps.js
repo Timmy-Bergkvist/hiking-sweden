@@ -1,6 +1,8 @@
 
 //Most of the information to make google maps can you get here:
 //https://developers.google.com/maps/documentation/javascript/examples/place-details
+//Some of the code and inspiration was obtained from:
+//https://jsudron.github.io/Nordic-Discovery-Project/index.html
 
 let map, places, infoWindow;
 let markers = [];

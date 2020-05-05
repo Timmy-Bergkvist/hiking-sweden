@@ -35,6 +35,7 @@
     <div id="container">
         <div id="main">
             <div class="section-frame">
+                
                 <!----------Search--Notes--Contact--links--------->
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 interactive-links row-nogutters">
                     <div id="search-header" onclick="changeTab('search')" ><a><i class="fas fa-search"><span> Search</span></i></a></div>
@@ -43,6 +44,7 @@
                 </div>
                 <div class="row justify-content-around">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 display-container">
+
                         <!------------Search menu--------------->
                         <div id="search" class="search_wrapper">
                             <div class="pac-card" id="pac-card">
@@ -52,7 +54,8 @@
                                         <button id="resetBtn" type="button" onclick="reset()">Reset</button>
                                     </div>
                                 </div>
-                                
+
+                                <!---------category option box----------->
                                 <div class="category-container" id="controls">
                                     <select id="category">
                                         <option value="" selected>Select a option</option>
@@ -63,7 +66,6 @@
                                         <option id="travel_agency" value="accommodation">Travel agency</option>
                                     </select>
                                 </div>
-                                
                             </div>
 
                             <!----------Result box---------->
@@ -111,6 +113,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <!---------------Notes form--------------->
                         <div id="notes" class="notes_wrapper" style="display:none;">
                             <div class="inputDiv">
@@ -123,6 +126,7 @@
                                 <div class="noteContainer"></div>
                             </div>
                         </div>
+
                         <!--------------Contact form-------------->
                         <div id="contact" class="contact_wrapper" style="display:none;">
                             <h2>Contact Us</h2>
@@ -146,6 +150,7 @@
                             </form>
                         </div>
                     </div>
+
                     <!----------Map----------->
                     <div id="map" class="col-xs-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 .col-lg-offset-1 .col-xl-offset-1  map-container">
                     </div>
@@ -154,6 +159,7 @@
         </div>
     </div>
 
+    <!----------Footer----------->
     <footer id="footer" >
         <div class="container-fluid">
             <div class="row">
@@ -184,6 +190,7 @@
             </div>
         </div>
     </footer>
+
     <!---------JavaScrip maps--------->
     <script src="assets/js/maps.js"></script>
 
