@@ -101,7 +101,34 @@ The index site section contains three clickable options and a map:
   - The CSS code is run and tested at:
     - https://jigsaw.w3.org/css-validator/#validate_by_input
     
+    
+  - Search
+    - Click on the "Search" header and the "Search" section will appear.
+    - Try to make a search in the search box and a city will be visible as an alternative.
+    - Try to select a category in the option menu.
+    - On selected category, pins will be visible in the map and in the result box.
+    - Try to select a pin and a popup will appear with information.
+    - Try to click on the reset button and everything will be reset and be back to its first stage.
+  
+  - Notes
+    - Click on the "Notes" header and the "Notes" section will appear.
+    - Try to write a note and click the save button and the notes will be saved below the input field.
+    - Try to click on the trash bin and the notes will be deleted.
+  
+  - Contact
+    - Click on the "Contact" header and the "Contact" section will appear.
+    - Try to submit the empty form and verify that an error message about the required fields appears.
+    - Try to submit the form with an invalid name, email and message an error message appears.
+    - Try to submit the form with all inputs valid and verify that an alert box will appear and
+      notify the user that the message is sent.
 
+  - Map
+    - Try to click on one of the clusters on the map and it will zoom in on the markers.
+    - Try to click on one of the red pins and a popup will appear with information and a picture.
+    - Try to click on the small x in the right corner and the popup will disappear.
+ 
+  - Bugs
+    - If the map is not displaying please reload the page, this may be due to that google maps api is not connecting properly.
   
 ## Deployment
   
