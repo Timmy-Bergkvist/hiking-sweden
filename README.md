@@ -72,6 +72,7 @@ The index site section contains three clickable options and a map:
 
 **Features Left to Implement**
 
+- Make the reset button only appear when the search button has been clicked. 
 - Host the platform on a server.
 - Implement more features and design.
 - Implement more select options.
