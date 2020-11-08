@@ -1,3 +1,5 @@
+This project is part of a course from <a href="https://codeinstitute.net/" target="_blank"> Code Institute. </a>
+
 ![Image of sweden](https://timmy-bergkvist.github.io/hiking-sweden/assets/images/readmefile-logo.jpg)
 
 # Hiking Sweden
